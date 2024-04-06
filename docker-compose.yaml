@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .   
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development
+
+  json-server:
+    image: clue/json-server
+    ports:
+      - "8000:3000"
+    volumes:
+      - ./data:/data
+    command: --watch db.json --port 3333

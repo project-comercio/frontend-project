@@ -1,0 +1,52 @@
+{
+	"marketingCourses": [
+		{
+			"id": 1,
+			"title": "Marketing Fundamentals",
+			"description": "Learn the essential principles and strategies of marketing to build a strong foundation.",
+			"price": 19
+		},
+		{
+			"id": 2,
+			"title": "Social Media Marketing Mastery",
+			"description": "Master social media platforms to engage audiences and drive business growth.",
+			"price": 29
+		},
+		{
+			"id": 3,
+			"title": "Content Marketing Strategies",
+			"description": "Craft compelling content that resonates with your audience and boosts conversions.",
+			"price": 29
+		},
+		{
+			"id": 4,
+			"title": "SEO Essentials",
+			"description": "Learn proven SEO techniques to improve your website's visibility and ranking.",
+			"price": 35
+		},
+		{
+			"id": 5,
+			"title": "Email Marketing Bootcamp",
+			"description": "Unlock the power of email marketing to nurture leads and drive sales effectively.",
+			"price": 12
+		},
+		{
+			"id": 6,
+			"title": "Data Analytics for Marketers",
+			"description": "Leverage data insights to optimize marketing campaigns and achieve better results.",
+			"price": 19
+		},
+		{
+			"id": 7,
+			"title": "Branding Strategies Workshop",
+			"description": "Develop a strong brand identity and position your business for success in the market.",
+			"price": 32
+		},
+		{
+			"id": 8,
+			"title": "Marketing Psychology Essentials",
+			"description": "Understand consumer behavior and psychology to create persuasive marketing campaigns.",
+			"price": 119
+		}
+	]
+}
