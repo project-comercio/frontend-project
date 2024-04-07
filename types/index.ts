@@ -4,8 +4,8 @@ import type { SwiperRef, SwiperSlideProps } from "swiper/react";
 import type { SwiperModule } from "swiper/types";
 
 export interface getInterface {
-  request?: Request;
-  params: Params;
+  request?: Request
+  params: Params
 }
 
 export interface ImageProps {

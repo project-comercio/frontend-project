@@ -108,10 +108,6 @@ export const UserProvider = ({children} : {children: React.ReactNode}) => {
     getInfo()
   }, [cookiesData])
 
-  // useEffect(() => {
-  //   redirectUser()
-  // }, [userData])
-
   return isPublic || cookiesData.id ? (
     <UserContext.Provider value={{cookiesData, getSessionInfo, userData, getUserInfo}}>
       {children}
