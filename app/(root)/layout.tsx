@@ -10,11 +10,12 @@ import { ChakraProvider } from "@chakra-ui/react";
 import "../../styles/globals.scss";
 import Footer from "@/components/Footer/Footer";
 import { UserProvider } from "@/context/UserContext";
+import { ApolloContext } from "@/context/ApolloContext";
+import ToastMessage from "@/components/Config/ToastMessage";
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   children: React.ReactNode | any;
 }>) {
   const metadata: Metadata = {
@@ -29,27 +30,30 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="pt">
         <body className="selection:bg-[#899edb] selection:text-white">
-          <ChakraProvider>
-            {isPublic ? (
-              <>
+          <ApolloContext>
+            <ChakraProvider>
+              <ToastMessage />
+              {isPublic ? (
+                <>
+                  <SignedIn>
+                    {children}
+                    <Footer />
+                  </SignedIn>
+                  <SignedOut>
+                    {children}
+                    <Footer />
+                  </SignedOut>
+                </>
+              ) : (
                 <SignedIn>
-                  {children}
-                  <Footer />
+                  <UserProvider>
+                    {children}
+                    <Footer />
+                  </UserProvider>
                 </SignedIn>
-                <SignedOut>
-                  {children}
-                  <Footer />
-                </SignedOut>
-              </>
-            ) : (
-              <SignedIn>
-                <UserProvider>
-                  {children}
-                  <Footer />
-                </UserProvider>
-              </SignedIn>
-            )}
-          </ChakraProvider>
+              )}
+            </ChakraProvider>
+          </ApolloContext>
         </body>
       </html>
     </ClerkProvider>
