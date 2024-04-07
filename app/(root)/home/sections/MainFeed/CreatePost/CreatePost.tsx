@@ -13,9 +13,8 @@ const CreatePost = ({handleGetAllPost}: CreatePostProps) => {
   const [postContent, setPostContent] = useState<string>("")
 
   const handleCreatePost = async () => {
-    console.log(userData)
     if (postContent.length > 0) {
-      const response = await fetch("http://localhost:8080/posts/", {
+      const response = await fetch("https://backend-repository.onrender.com/posts/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
