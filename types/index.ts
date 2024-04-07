@@ -25,21 +25,16 @@ export interface ButtonProps {
 }
 
 export interface DoughnutProps {
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   chartData: any;
 }
 
 export interface LineChartProps {
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   chartData: any;
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   chartOptions: any;
 }
 
 export interface RadarChartProps {
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   chartData: any;
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   chartOptions: any;
 }
 
@@ -99,4 +94,24 @@ export interface SwiperProps {
   SwiperSlide: FunctionComponent<SwiperSlideProps>;
   Navigation: SwiperModule;
   Pagination: SwiperModule;
+}
+
+export interface PostProps {
+  id: string
+  creatorId: string
+  creatorName: string
+  creatorPhoto: string
+  date?: Date
+  content: string
+  images?: string[]
+  comments?: number
+  likes?: number
+  shares?: number  
+}
+
+export interface UserContextProps {
+  cookiesData: any, 
+  getSessionInfo(): void, 
+  userData: UserProps, 
+  getUserInfo(): void
 }

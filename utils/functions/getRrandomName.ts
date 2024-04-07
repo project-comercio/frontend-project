@@ -6,8 +6,8 @@ interface UserCookiesData {
 export async function generateRandomName(data: UserCookiesData) {
   
   const generateRandomName = async (cookiesData: UserCookiesData) =>{
-    const randomNumber = Math.floor(Math.random() * 100); // Gera um número aleatório entre 0 e 99
-    return `${cookiesData.firstName}${randomNumber}${cookiesData.lastName}`;
+    const randomNumber = Math.floor(Math.random() * 100); 
+    return `${cookiesData.firstName.toLowerCase}.${cookiesData.lastName.toLowerCase}${randomNumber}`
   }
   
   const randomName = await generateRandomName(data);
