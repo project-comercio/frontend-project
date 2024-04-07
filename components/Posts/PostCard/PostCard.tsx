@@ -7,21 +7,22 @@ import { LuShare2 } from "react-icons/lu";
 import { MdOutlineEmojiEmotions } from "react-icons/md";
 import { MdOutlineImage } from "react-icons/md";
 import { MdInsertLink } from "react-icons/md";
+import { PostProps } from "@/types";
 
-const PostCard = () => {
+const PostCard = ({ postContent } : {postContent: PostProps}) => {
   return (
     <div className="w-full bg-white border border-slate-200 p-6 rounded-lg">
       <div className="flex w-full justify-between gap-3 items-center">
-        <figure className="h-10 w-10">
+        <figure className="h-8 w-8">
           <img
-            src="https://media.licdn.com/dms/image/C4E03AQHojigqZYOQng/profile-displayphoto-shrink_800_800/0/1633883120941?e=2147483647&v=beta&t=VoX15ySCO4IMgdt0FHN0OP7jWDFK4qyRtdZxMBx7IlY"
+            src={postContent.creatorPhoto}
             alt="profile-picture"
             className="rounded-full h-full w-full"
           />
         </figure>
-        <div className="w-full">
-          <h3 className="text-sm font-semibold">Alfredo Rodrigues</h3>
-          <p className="text-xs mt-1 text-slate-500">postado a 3 horas atrás</p>
+        <div className="w-full flex-1">
+          <h3 className="text-sm font-semibold">{postContent.creatorName}</h3>
+          <p className="text-xs mt-1 text-slate-500">postado a 1 minuto atrás</p>
         </div>
         <div>
           <IoEllipsisHorizontalSharp size={20} className="gray-icon" />
@@ -29,8 +30,7 @@ const PostCard = () => {
       </div>
       <article className="mt-6">
         <p className="text-sm">
-          Isso se trata de uma publicação de testes com intuito de testar o
-          componente de postagem da nossa nova plataforma de networking
+          {postContent.content}
         </p>
       </article>
       <figure className="mt-4 w-full rounded-md h-[350px] group relative block overflow-hidden">
@@ -43,15 +43,15 @@ const PostCard = () => {
       <div className="w-full flex items-center justify-around mt-4">
         <div className="items-center flex gap-3">
           <FaRegComment size={18} className="gray-icon" />
-          <p className="text-slate-500 text-xs">0 comentários</p>
+          <p className="text-slate-500 text-xs">{postContent.comments} comentários</p>
         </div>
         <div className="items-center flex gap-3">
           <FaRegHeart size={18} className="gray-icon" />
-          <p className="text-slate-500 text-xs">0 curtidas</p>
+          <p className="text-slate-500 text-xs">{postContent.likes} curtidas</p>
         </div>
         <div className="items-center flex gap-3">
           <FaRegShareFromSquare size={18} className="gray-icon" />
-          <p className="text-slate-500 text-xs">0 envios</p>
+          <p className="text-slate-500 text-xs">{postContent.shares} envios</p>
         </div>
         <div className="items-center flex gap-3">
           <LuShare2 size={18} className="gray-icon" />

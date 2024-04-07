@@ -32,7 +32,7 @@ export const UserProvider = ({children} : {children: React.ReactNode}) => {
 
   const getUserInfo = async () => {
     try {
-      const requisiton = await fetch(`http://localhost:8080/users/${cookiesData.id}`, {
+      const requisiton = await fetch(`https://backend-repository.onrender.com/users/${cookiesData.id}`, {
         method: "GET"
       })
       const response = await requisiton.json()
@@ -48,7 +48,7 @@ export const UserProvider = ({children} : {children: React.ReactNode}) => {
 
   const createUser = async () => {
     try {
-      const response = await fetch("http://localhost:8080/users/", {
+      const response = await fetch("https://backend-repository.onrender.com/users/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

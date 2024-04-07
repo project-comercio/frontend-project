@@ -11,7 +11,7 @@ const MainFeed = () => {
 
   const handleGetAllPosts = async () => {
     try {
-      const requisiton = await fetch("http://localhost:8080/posts/", {
+      const requisiton = await fetch("https://backend-repository.onrender.com/posts/", {
         method: "GET"
       })
       const response = await requisiton.json()
@@ -30,7 +30,7 @@ const MainFeed = () => {
       <CreatePost handleGetAllPost={handleGetAllPosts} />
       <section>
       {posts.map((post: PostProps, index: number) => (
-        <PostCard key={`${post.creatorId}-${index}`} />
+        <PostCard postContent={post} key={`${post.creatorId}-${index}`} />
       ))}
     </section>
     </div>
