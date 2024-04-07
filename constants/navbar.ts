@@ -5,7 +5,7 @@ export const navbarLinks = [
   },
   {
     label: "Artigos",
-    href: "/tips"
+    href: "/articles"
   },
   {
     label: "Em Alta",

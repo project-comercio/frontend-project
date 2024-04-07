@@ -43,7 +43,7 @@ export const UserProvider = ({children} : {children: React.ReactNode}) => {
       }
     } catch (error) {
       await createUser()
-      console.log(error)
+      return
     }
   }
 

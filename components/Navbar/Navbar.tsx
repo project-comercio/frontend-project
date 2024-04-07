@@ -1,8 +1,11 @@
+"use client"
+
 import { navbarLinks } from "@/constants/navbar";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { IoMenuOutline } from "react-icons/io5";
+import MiniNavbar from "./MiniNavbar";
 
 interface NavbarLinkProps {
   label: string;
@@ -15,6 +18,8 @@ interface NavbarProps {
 }
 
 const Navbar = ({ transparent, variant }: NavbarProps) => {
+  const [showMiniNavbar, setShowMiniNavbar] = useState<boolean>(false)
+
   return (
     <nav
       className={`${transparent ? "bg-transparent" : null} ${
@@ -44,7 +49,7 @@ const Navbar = ({ transparent, variant }: NavbarProps) => {
         <div className="w-full max-w-lg items-center flex justify-end">
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
-            <IoMenuOutline size={38} className={`ml-4 cursor-pointer ${variant === 'secondary' ? "white-icon" : "dark-icon"}`} />
+            <IoMenuOutline size={32} className={`ml-4 cursor-pointer ${variant === 'secondary' ? "white-icon" : "dark-icon"}`} onClick={() => setShowMiniNavbar(!showMiniNavbar)} />
           </SignedIn>
           <SignedOut>
             <div className="flex w-full gap-8 items-center justify-end">
@@ -68,6 +73,8 @@ const Navbar = ({ transparent, variant }: NavbarProps) => {
           </SignedOut>
         </div>
       </div>
+
+      {showMiniNavbar ? <MiniNavbar setShowMenu={setShowMiniNavbar} showMenu={showMiniNavbar} /> : null}
     </nav>
   );
 };
