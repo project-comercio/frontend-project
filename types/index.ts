@@ -103,7 +103,7 @@ export interface PostProps {
   creatorPhoto: string
   date?: Date
   content: string
-  images?: string[]
+  images: string[]
   comments?: number
   likes?: number
   shares?: number  

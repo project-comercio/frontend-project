@@ -18,13 +18,13 @@ const Footer = () => {
       <div className="border-zinc-100 bg-white border-t-2 min-h-[360px] flex w-full pt-16 flex-col sm:flex-row">
         <div className="w-full xs:mb-12 flex flex-col items-center xs:justify-center">
         <span className="font-bold lg:text-3xl text-xl">
-          Commu
+          Projeto
           <span className="font-bold lg:text-3xl text-xl text-principal">
-            Co
+            IFSP
           </span>
         </span>
           <p className="mt-2">Impulsionando sua empresa</p>
-          <p className="text-sm text-slate-500">Se torne referência no seu nicho</p>
+          <p className="text-xs text-slate-500">Se torne referência no seu nicho</p>
         </div>
         <div className="w-full flex gap-6 flex-wrap sm:flex-nowrap mt-16 sm:mt-0">
           {footerLinks.map((link: FooterLinkProps, index: number) => (
