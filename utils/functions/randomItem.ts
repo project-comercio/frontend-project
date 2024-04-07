@@ -1,4 +1,4 @@
-export const randomize = async (array: []) => {
+export const randomize = async (array: any[]) => {
   const arrayEmbaralhado = array.slice();
   for (let i = arrayEmbaralhado.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));

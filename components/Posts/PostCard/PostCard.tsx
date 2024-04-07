@@ -8,12 +8,15 @@ import { MdOutlineEmojiEmotions } from "react-icons/md";
 import { MdOutlineImage } from "react-icons/md";
 import { MdInsertLink } from "react-icons/md";
 import { PostProps } from "@/types";
+import { getUser } from "@/context/UserContext";
 
 const PostCard = ({ postContent } : {postContent: PostProps}) => {
+  const {userData} = getUser()
+
   return (
-    <div className="w-full bg-white border border-slate-200 p-6 rounded-lg">
+    <div className="w-full bg-white border drop-shadow-sm border-slate-200 p-4 lg:p-6 rounded-lg">
       <div className="flex w-full justify-between gap-3 items-center">
-        <figure className="h-8 w-8">
+        <figure className="h-8 w-8 cursor-pointer">
           <img
             src={postContent.creatorPhoto}
             alt="profile-picture"
@@ -22,9 +25,9 @@ const PostCard = ({ postContent } : {postContent: PostProps}) => {
         </figure>
         <div className="w-full flex-1">
           <h3 className="text-sm font-semibold">{postContent.creatorName}</h3>
-          <p className="text-xs mt-1 text-slate-500">postado a 1 minuto atrás</p>
+          <p className="text-xs text-slate-500">postado a 1 minuto atrás</p>
         </div>
-        <div>
+        <div className="cursor-pointer">
           <IoEllipsisHorizontalSharp size={20} className="gray-icon" />
         </div>
       </div>
@@ -35,33 +38,33 @@ const PostCard = ({ postContent } : {postContent: PostProps}) => {
       </article>
       <figure className="mt-4 w-full rounded-md h-[350px] group relative block overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2301&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src={postContent.images[0]}
           alt="post-image"
           className="rounded-md absolute inset-0 h-full w-full object-cover object-center transition-all duration-300 group-hover:scale-105"
         />
       </figure>
-      <div className="w-full flex items-center justify-around mt-4">
-        <div className="items-center flex gap-3">
+      <div className="w-full flex items-center justify-start gap-4 lg:gap-0 lg:justify-around mt-4">
+        <div className="items-center flex gap-3 cursor-pointer">
           <FaRegComment size={18} className="gray-icon" />
-          <p className="text-slate-500 text-xs">{postContent.comments} comentários</p>
+          <p className="lg:block hidden text-slate-500 text-xs">{postContent.comments} comentários</p>
         </div>
-        <div className="items-center flex gap-3">
+        <div className="items-center flex gap-3 cursor-pointer">
           <FaRegHeart size={18} className="gray-icon" />
-          <p className="text-slate-500 text-xs">{postContent.likes} curtidas</p>
+          <p className="lg:block hidden text-slate-500 text-xs">{postContent.likes} curtidas</p>
         </div>
-        <div className="items-center flex gap-3">
+        <div className="items-center flex gap-3 cursor-pointer">
           <FaRegShareFromSquare size={18} className="gray-icon" />
-          <p className="text-slate-500 text-xs">{postContent.shares} envios</p>
+          <p className="lg:block hidden text-slate-500 text-xs">{postContent.shares} envios</p>
         </div>
-        <div className="items-center flex gap-3">
+        <div className="items-center flex gap-3 cursor-pointer">
           <LuShare2 size={18} className="gray-icon" />
-          <p className="text-slate-500 text-xs">compartilhar</p>
+          <p className="lg:block hidden text-slate-500 text-xs">compartilhar</p>
         </div>
       </div>
       <div className="w-full flex items-center mt-8 justify-between gap-3">
         <figure className="w-8 h-8">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/434px-Unknown_person.jpg"
+            src={userData?.picture}
             alt="profile-image"
             className="rounded-full w-full h-full"
           />
