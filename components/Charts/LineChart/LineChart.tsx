@@ -10,7 +10,7 @@ import {
   LinearScale,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { LineChartProps } from "@/types/types";
+import { LineChartProps } from "@/types/index";
 
 ChartJS.register(
   ArcElement,

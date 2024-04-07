@@ -17,6 +17,7 @@
     "@emotion/styled": "^11.11.5",
     "@react-three/drei": "^9.103.0",
     "@react-three/fiber": "^8.16.1",
+    "@types/bcryptjs": "^2.4.6",
     "bcryptjs": "^2.4.3",
     "chart.js": "^4.4.2",
     "clerk": "^0.8.3",

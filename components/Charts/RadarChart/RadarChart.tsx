@@ -11,7 +11,7 @@ import {
   RadialLinearScale,
 } from "chart.js";
 import { Radar } from "react-chartjs-2";
-import { RadarChartProps } from "@/types/types";
+import { RadarChartProps } from "@/types/index";
 
 ChartJS.register(
   ArcElement,
