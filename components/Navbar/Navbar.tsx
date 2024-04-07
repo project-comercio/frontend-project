@@ -43,8 +43,8 @@ const Navbar = ({ transparent, variant }: NavbarProps) => {
         </div>
         <div className="w-full max-w-lg items-center flex justify-end">
           <SignedIn>
-            <IoMenuOutline size={38} className={`mr-4 cursor-pointer ${variant === 'secondary' ? "white-icon" : "dark-icon"}`} />
             <UserButton afterSignOutUrl="/" />
+            <IoMenuOutline size={38} className={`ml-4 cursor-pointer ${variant === 'secondary' ? "white-icon" : "dark-icon"}`} />
           </SignedIn>
           <SignedOut>
             <div className="flex w-full gap-8 items-center justify-end">
