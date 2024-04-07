@@ -42,6 +42,7 @@ export const UserProvider = ({children} : {children: React.ReactNode}) => {
         await createUser()
       }
     } catch (error) {
+      await createUser()
       console.log(error)
     }
   }
@@ -75,7 +76,7 @@ export const UserProvider = ({children} : {children: React.ReactNode}) => {
         throw new Error("Houve um erro durante a criação do usuário")
       }
     } catch (error) {
-      throw new Error("Não foi possível criar um novo usuário")
+      return
     }
   }
 
