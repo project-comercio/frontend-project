@@ -1,7 +1,8 @@
 import type { getInterface } from "@/types/index";
 import { currentUser } from "@clerk/nextjs";
+import { NextRequest } from "next/server";
 
-export const GET = async ({ params }: getInterface) => {
+export const GET = async ({ params }: {params: Request | NextRequest}) => {
   try {
     const userInfo = await currentUser();
 
