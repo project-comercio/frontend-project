@@ -120,7 +120,7 @@ const Sidebar = () => {
           <h2 className="py-2 border-slate-200 border-b text-sm font-medium">
             Artigos
           </h2>
-          <ul className="mt-4 flex flex-col gap-6">
+          <ul className="mt-4 flex flex-col gap-2">
             <SidebarArticle />
             <SidebarArticle />
             <SidebarArticle />
