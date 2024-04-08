@@ -110,7 +110,7 @@ export const UserProvider = ({children} : {children: React.ReactNode}) => {
 
   return isPublic || cookiesData.id ? (
     <UserContext.Provider value={{cookiesData, getSessionInfo, userData, getUserInfo}}>
-      {children}
+      {children}    
     </UserContext.Provider>
   ) : <Loader />
 }

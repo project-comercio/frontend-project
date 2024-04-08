@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import React from 'react'
 import {
-  IoMenuOutline,
-  IoNewspaperOutline,
   IoHomeOutline,
-  IoChatbubbleEllipsesOutline,
   IoDocumentsOutline,
 } from "react-icons/io5";
-import { MdOutlineSupportAgent } from "react-icons/md";
+import { BsGrid } from "react-icons/bs";
+import { MdOutlineLocalFireDepartment } from "react-icons/md";
+import { PiUserCircleLight } from "react-icons/pi";
 
 interface MiniNavbarProps {
   showMenu: boolean
@@ -26,7 +25,7 @@ const MiniNavbar = ({showMenu, setShowMenu} : MiniNavbarProps) => {
       <img
         src="https://cdn-icons-png.flaticon.com/512/9679/9679459.png"
         className="w-[50px] h-[50px] selection:bg-transparent"
-        alt="Cellphone Image"
+        alt="cellphone-picture"
       />
       <div>
         <h4 className="text-sm font-semibold">
@@ -60,7 +59,7 @@ const MiniNavbar = ({showMenu, setShowMenu} : MiniNavbarProps) => {
         id="feed"
         onClick={() => setShowMenu(false)}
       >
-        <IoDocumentsOutline size={27.5} className="gray-icon" />
+        <BsGrid size={27.5} className="gray-icon" />
         <h3 className="w-full text-sm">Feed</h3>
       </Link>
       <Link
@@ -69,7 +68,7 @@ const MiniNavbar = ({showMenu, setShowMenu} : MiniNavbarProps) => {
         id="purchases"
         onClick={() => setShowMenu(false)}
       >
-        <IoNewspaperOutline size={27.5} className="gray-icon" />
+        <IoDocumentsOutline size={27.5} className="gray-icon" />
         <h3 className="w-full text-sm">Artigos</h3>
       </Link>
       <Link
@@ -78,7 +77,7 @@ const MiniNavbar = ({showMenu, setShowMenu} : MiniNavbarProps) => {
         id="coupons"
         onClick={() => setShowMenu(false)}
       >
-        <MdOutlineSupportAgent size={27.5} className="gray-icon" />
+        <MdOutlineLocalFireDepartment size={27.5} className="gray-icon" />
         <h3 className="w-full text-sm">Em Alta</h3>
       </Link>
       <Link
@@ -87,7 +86,7 @@ const MiniNavbar = ({showMenu, setShowMenu} : MiniNavbarProps) => {
         id="profile"
         onClick={() => setShowMenu(false)}
       >
-        <IoChatbubbleEllipsesOutline
+        <PiUserCircleLight
           size={27.5}
           className="gray-icon"
         />

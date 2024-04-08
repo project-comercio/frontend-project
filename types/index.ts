@@ -43,7 +43,7 @@ export interface PopupProps {
   title: string;
   description?: string;
   showState: boolean;
-  setShowState(): void;
+  setShowState(arg: boolean): void;
   handleSubmit?: () => void;
 }
 
