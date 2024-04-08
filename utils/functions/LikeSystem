@@ -1,0 +1,48 @@
+interface Post {
+    id: number;
+    content: string;
+    likes: number;
+}
+
+class PostManager {
+    private posts: Post[];
+
+    constructor() {
+        this.posts = [];
+    }
+
+    createPost(content: string): Post {
+        const postId = this.posts.length + 1;
+        const newPost: Post = {
+            id: postId,
+            content,
+            likes: 0
+        };
+        this.posts.push(newPost);
+        return newPost;
+    }
+
+    likePost(postId: number): void {
+        const postIndex = this.posts.findIndex(post => post.id === postId);
+        if (postIndex !== -1) {
+            this.posts[postIndex].likes++;
+        } else {
+            console.log("Post not found");
+        }
+    }
+
+    unlikePost(postId: number): void {
+        const postIndex = this.posts.findIndex(post => post.id === postId);
+        if (postIndex !== -1 && this.posts[postIndex].likes > 0) {
+            this.posts[postIndex].likes--;
+        } else {
+            console.log("Post not found or already has 0 likes");
+        }
+    }
+
+    getAllPosts(): Post[] {
+        return this.posts;
+    }
+}
+
+
