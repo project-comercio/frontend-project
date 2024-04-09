@@ -10,7 +10,7 @@ import UserTab from '../home/sections/Usertab/UserTab'
 
 export async function generateMetadata() {
   return getMetaData({
-    title: "Titulo",
+    title: "teste",
     description: "Descrição",
     image: ""
   })

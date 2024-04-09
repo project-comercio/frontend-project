@@ -106,12 +106,20 @@ export interface PostProps {
   images: string[]
   comments?: number
   likes?: number
-  shares?: number  
+  shares?: number
 }
 
 export interface UserContextProps {
-  cookiesData: any, 
-  getSessionInfo(): void, 
-  userData: UserProps, 
+  cookiesData: any,
+  getSessionInfo(): void,
+  userData: UserProps,
   getUserInfo(): void
+}
+
+export interface CompanyDataProps {
+  logo: string
+  companyName: string
+  companyDescription: string
+  posts: number
+  followers: number
 }

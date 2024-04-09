@@ -14,28 +14,33 @@ interface UserTabLink {
   href: string;
 }
 
-const UserTab = () => {
+interface UserTabProps {
+  currentTab: string
+  setCurrentTab(arg: string): void
+}
+
+const UserTab = ({currentTab, setCurrentTab}: UserTabProps) => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [selectedTab, setSelectedTab] = useState<UserTabLink>({
-    icon: "grid",
+    icon: "feed",
     label: "",
     href: "",
   });
 
   const icons: any = {
-    grid: (
+    feed: (
       <CiGrid31
         size={24}
         className={`${
-          selectedTab?.icon === "grid" ? "colored-icon" : "gray-icon"
+          selectedTab?.icon === "feed" ? "colored-icon" : "gray-icon"
         }`}
       />
     ),
-    people: (
+    networking: (
       <CiUser
         size={24}
         className={`${
-          selectedTab?.icon === "people" ? "colored-icon" : "gray-icon"
+          selectedTab?.icon === "networking" ? "colored-icon" : "gray-icon"
         }`}
       />
     ),
@@ -92,6 +97,7 @@ const UserTab = () => {
               className="flex py-2 items-center cursor-pointer transition-all duration-300 ease-in-out hover:bg-zinc-100 hover:rounded-lg"
               key={`${tab.label}-${index}`}
               onClick={() => {
+                setCurrentTab(tab.icon)
                 setSelectedTab(tab);
                 setSelectedIndex(index);
               }}

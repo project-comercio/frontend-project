@@ -6,6 +6,7 @@ import CreatePost from "./CreatePost/CreatePost";
 import { PostProps } from "@/types";
 import UploadPhoto from "@/components/Config/UploadPhoto";
 import { randomize } from "@/utils/functions/randomItem";
+import MiniLoader from "@/components/Config/MiniLoader";
 
 const MainFeed = () => {
 
@@ -32,10 +33,14 @@ const MainFeed = () => {
     <div className="w-full flex flex-col gap-4">
       <CreatePost handleGetAllPost={handleGetAllPosts} />
       <section className="flex flex-col w-full gap-4">
-      {posts.map((post: PostProps, index: number) => (
-        <PostCard postContent={post} key={`${post.creatorId}-${index}`} />
-      ))}
-    </section>
+        {posts.length > 0 ? (
+          <>
+            {posts.map((post: PostProps, index: number) => (
+              <PostCard postContent={post} key={`${post.creatorId}-${index}`} />
+            ))}
+          </>
+        ) : <MiniLoader />}
+      </section>
     </div>
   );
 };
