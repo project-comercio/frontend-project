@@ -65,7 +65,7 @@ const CreatePost = ({handleGetAllPost}: CreatePostProps) => {
         <span className='text-xs text-slate-500 mb-2'>
           Preview imagem do post:
         </span>
-        <img src={postImage} className='rounded-lg' alt='Post Image Preview' />
+        <img src={postImage} className='rounded-lg' alt='post-picture-preview' />
       </div>
     ) : null}
   </section>
