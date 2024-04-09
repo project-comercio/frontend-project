@@ -5,7 +5,7 @@ import Header from './sections/Header'
 
 export async function generateMetadata() {
   return getMetaData({
-    title: "Titulo",
+    title: "Contatos",
     description: "Descrição",
     image: ""
   })

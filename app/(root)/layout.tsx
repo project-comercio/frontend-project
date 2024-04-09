@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode | any;
 }>) {
   const metadata: Metadata = {
-    title: "Project",
+    title: "ProjetoIFSP - Página inicial",
     description: "Expanda a visibilidade da sua marca"
   };
 

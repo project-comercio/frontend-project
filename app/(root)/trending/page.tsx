@@ -5,7 +5,7 @@ import { getMetaData } from "@/utils/getMetaData";
 
 export async function generateMetadata() {
   return getMetaData({
-    title: "Titulo",
+    title: "Em alta",
     description: "Descrição",
     image: ""
   })
