@@ -13,10 +13,10 @@ const Networking = () => {
                 <img className='rounded-full w-auto h-auto' alt='company-logo' src={company.logo} />
               </figure>
               <article className='flex-1'> 
-                <h2 className='mt-4 text-sm font-semibold'>{company.companyName}</h2>
+                <h2 className='mt-4 text-center lg:text-left xl:text-center text-sm font-semibold'>{company.companyName}</h2>
                 <p className='mt-1 text-xs text-slate line-clamp-3'>{company.companyDescription}</p>
               </article>
-              <button type='button' className="lg:hidden flex xl:flex w-full mt-4 text-white rounded-full px-4 py-1 text-xs bg-principal text-center transition-all duration-300 hover:brightness-105">
+              <button type='button' className="text-center lg:hidden xl:flex w-full mt-4 text-white rounded-full px-4 py-1 text-xs bg-principal transition-all flex justify-center duration-300 hover:brightness-105">
                 Seguir
               </button>
             </div>

@@ -15,6 +15,7 @@ import { getUser } from "@/context/UserContext";
 const PostCard = ({ postContent } : {postContent: PostProps}) => {
   const {userData, getUserInfo} = getUser()
 
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   const [postLikes, setPostsLikes] = useState<number | any>(postContent.likes)
   const [isLiked, setIsLiked] = useState<boolean>(userData?.likes.includes(postContent.id))
 
