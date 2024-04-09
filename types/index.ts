@@ -25,16 +25,21 @@ export interface ButtonProps {
 }
 
 export interface DoughnutProps {
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   chartData: any;
 }
 
 export interface LineChartProps {
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   chartData: any;
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   chartOptions: any;
 }
 
 export interface RadarChartProps {
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   chartData: any;
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   chartOptions: any;
 }
 
@@ -43,7 +48,7 @@ export interface PopupProps {
   title: string;
   description?: string;
   showState: boolean;
-  setShowState(): void;
+  setShowState(arg: boolean): void;
   handleSubmit?: () => void;
 }
 
@@ -74,6 +79,7 @@ export interface UserProps {
   following: number;
   picture: string;
   backgroundImage: string;
+  likes: string[];
   viewTrending: boolean;
 }
 
@@ -106,12 +112,21 @@ export interface PostProps {
   images: string[]
   comments?: number
   likes?: number
-  shares?: number  
+  shares?: number
 }
 
 export interface UserContextProps {
-  cookiesData: any, 
-  getSessionInfo(): void, 
-  userData: UserProps, 
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  cookiesData: any,
+  getSessionInfo(): void,
+  userData: UserProps,
   getUserInfo(): void
+}
+
+export interface CompanyDataProps {
+  logo: string
+  companyName: string
+  companyDescription: string
+  posts: number
+  followers: number
 }

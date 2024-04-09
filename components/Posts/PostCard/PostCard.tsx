@@ -1,17 +1,67 @@
-import React from "react";
+"use client"
+
+import React, { useState } from "react";
 import { IoEllipsisHorizontalSharp } from "react-icons/io5";
 import { FaRegComment } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaHeart  } from "react-icons/fa";
 import { FaRegShareFromSquare } from "react-icons/fa6";
 import { LuShare2 } from "react-icons/lu";
 import { MdOutlineEmojiEmotions } from "react-icons/md";
 import { MdOutlineImage } from "react-icons/md";
 import { MdInsertLink } from "react-icons/md";
-import { PostProps } from "@/types";
+import type { PostProps } from "@/types";
 import { getUser } from "@/context/UserContext";
 
 const PostCard = ({ postContent } : {postContent: PostProps}) => {
-  const {userData} = getUser()
+  const {userData, getUserInfo} = getUser()
+
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  const [postLikes, setPostsLikes] = useState<number | any>(postContent.likes)
+  const [isLiked, setIsLiked] = useState<boolean>(userData?.likes.includes(postContent.id))
+
+  const handleLikePost = async () => {
+    try {
+      setPostsLikes(postContent.likes && postLikes + 1)
+      setIsLiked(true)
+      const response = await fetch("https://backend-repository.onrender.com/users/likePost", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          postId: postContent.id,
+          userId: userData?.id
+        })
+      })
+      if (response.ok) {
+        await getUserInfo()
+      }
+    } catch (error) {
+      throw new Error(`Não foi possível curtir a postagem: ${error}`)
+    }
+  }
+
+  const handleDislikePost = async () => {
+    try {
+      setPostsLikes(postContent.likes && postLikes - 1)
+      setIsLiked(false)
+      const response = await fetch("https://backend-repository.onrender.com/users/dilikePost", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          postId: postContent.id,
+          userId: userData?.id
+        })
+      })
+      if (response.ok) {
+        await getUserInfo()
+      }
+    } catch (error) {
+      throw new Error(`Não foi possível curtir a postagem: ${error}`)
+    }
+  }
 
   return (
     <div className="w-full bg-white border drop-shadow-sm border-slate-200 p-4 lg:p-6 rounded-lg">
@@ -49,8 +99,12 @@ const PostCard = ({ postContent } : {postContent: PostProps}) => {
           <p className="lg:block hidden text-slate-500 text-xs">{postContent.comments} comentários</p>
         </div>
         <div className="items-center flex gap-3 cursor-pointer">
-          <FaRegHeart size={18} className="gray-icon" />
-          <p className="lg:block hidden text-slate-500 text-xs">{postContent.likes} curtidas</p>
+          {isLiked ? (
+            <FaHeart size={18} className="colored-icon" onClick={() => handleDislikePost()} />
+          ) : (
+            <FaRegHeart size={18} className="gray-icon" onClick={() => handleLikePost()} />
+          )}
+          <p className="lg:block hidden text-slate-500 text-xs">{postLikes} curtidas</p>
         </div>
         <div className="items-center flex gap-3 cursor-pointer">
           <FaRegShareFromSquare size={18} className="gray-icon" />

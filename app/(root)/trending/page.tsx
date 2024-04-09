@@ -14,7 +14,7 @@ export async function generateMetadata() {
 const page = () => {
   return (
     <>
-      <Navbar />
+      <Navbar variant='primary' />
       <main className="lg:px-12 px-4 min-h-[62vh] pt-20">
         <Topics />
       </main>

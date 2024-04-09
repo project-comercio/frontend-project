@@ -1,11 +1,11 @@
 export const userTabLinks = [
   {
-    icon: "grid",
+    icon: "feed",
     label: "Feed",
     href: "#"
   },
   {
-    icon: "people",
+    icon: "networking",
     label: "Conexões",
     href: "#"
   },
