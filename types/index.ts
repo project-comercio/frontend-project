@@ -74,6 +74,7 @@ export interface UserProps {
   following: number;
   picture: string;
   backgroundImage: string;
+  likes: string[];
   viewTrending: boolean;
 }
 

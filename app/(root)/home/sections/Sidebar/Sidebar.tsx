@@ -31,7 +31,7 @@ const Sidebar = () => {
 
   const handleGetAllUsers = async () => {
     try {
-      const requisiton = await fetch(`https://backend-repository.onrender.com/users/`, {
+      const requisiton = await fetch("https://backend-repository.onrender.com/users/", {
         method: "GET"
       })
       const response = await requisiton.json()
@@ -57,7 +57,7 @@ const Sidebar = () => {
           <p className="text-slate-500 mt-4 text-xs">
             Transformar a sua conta pessoal em empresarial pode ser uma excelente oportunidade para você que deseja expandir e aumentar a visibilidade do seu negócio
           </p>
-          <button className="w-full mt-4 text-white rounded-full px-4 py-1 text-xs bg-principal text-center transition-all duration-300 hover:brightness-105">
+          <button type="button" className="w-full mt-4 text-white rounded-full px-4 py-1 text-xs bg-principal text-center transition-all duration-300 hover:brightness-105">
             Quero saber mais
           </button>
         </div>
@@ -66,7 +66,7 @@ const Sidebar = () => {
             Conheça outras empresas
           </h2>
           <ul className="w-full flex flex-col gap-6 mt-4">
-            {COMPANIES_DATA.map((company: CompanyDataProps, index: number) => (
+            {COMPANIES_DATA.slice(0, 4).map((company: CompanyDataProps, index: number) => (
               <li className="flex w-full gap-3 justify-between items-center" key={`${company.companyName}-${index}`}>
                 <figure className="w-6 h-6">
                   <img
