@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import { CiImageOn } from "react-icons/ci";
 import { IoIosSend } from "react-icons/io";
 import { toast } from 'react-toastify';
-import { CreatePostProps } from './types';
+import type { CreatePostProps } from './types';
 import UploadPhoto from '@/components/Config/UploadPhoto';
 
 const CreatePost = ({handleGetAllPost}: CreatePostProps) => {

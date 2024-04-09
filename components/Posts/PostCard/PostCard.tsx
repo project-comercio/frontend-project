@@ -9,7 +9,7 @@ import { LuShare2 } from "react-icons/lu";
 import { MdOutlineEmojiEmotions } from "react-icons/md";
 import { MdOutlineImage } from "react-icons/md";
 import { MdInsertLink } from "react-icons/md";
-import { PostProps } from "@/types";
+import type { PostProps } from "@/types";
 import { getUser } from "@/context/UserContext";
 
 const PostCard = ({ postContent } : {postContent: PostProps}) => {

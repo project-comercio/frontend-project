@@ -1,5 +1,5 @@
 import { COMPANIES_DATA } from '@/constants/companies-data'
-import { CompanyDataProps } from '@/types'
+import type { CompanyDataProps } from '@/types'
 import React from 'react'
 
 const Networking = () => {

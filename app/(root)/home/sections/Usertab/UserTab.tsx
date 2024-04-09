@@ -19,6 +19,14 @@ interface UserTabProps {
   setCurrentTab(arg: string): void
 }
 
+interface SidebarIconProps {
+  feed: React.JSX.Element
+  networking: React.JSX.Element 
+  video: React.JSX.Element 
+  photo: React.JSX.Element 
+  shop: React.JSX.Element
+}
+
 const UserTab = ({currentTab, setCurrentTab}: UserTabProps) => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [selectedTab, setSelectedTab] = useState<UserTabLink>({
@@ -27,7 +35,8 @@ const UserTab = ({currentTab, setCurrentTab}: UserTabProps) => {
     href: "",
   });
 
-  const icons: any = {
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  const icons: SidebarIconProps | any = {
     feed: (
       <CiGrid31
         size={24}
@@ -93,6 +102,7 @@ const UserTab = ({currentTab, setCurrentTab}: UserTabProps) => {
       <div className={`w-full sticky bg-white border border-slate-200 rounded-lg py-4 px-2 ${isScrolled ? 'top-24' : 'inset-0'}`}>
         <ul className="w-full flex flex-col">
           {userTabLinks.map((tab: UserTabLink, index: number) => (
+            // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
             <li
               className="flex py-2 items-center cursor-pointer transition-all duration-300 ease-in-out hover:bg-zinc-100 hover:rounded-lg"
               key={`${tab.label}-${index}`}

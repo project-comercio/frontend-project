@@ -3,7 +3,7 @@
 import PostCard from "@/components/Posts/PostCard/PostCard";
 import React, { useEffect, useState } from "react";
 import CreatePost from "./CreatePost/CreatePost";
-import { PostProps } from "@/types";
+import type { PostProps } from "@/types";
 import UploadPhoto from "@/components/Config/UploadPhoto";
 import { randomize } from "@/utils/functions/randomItem";
 import MiniLoader from "@/components/Config/MiniLoader";
@@ -25,6 +25,7 @@ const MainFeed = () => {
     }
   }
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     handleGetAllPosts()
   }, [])
