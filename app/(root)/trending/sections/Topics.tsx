@@ -1,10 +1,10 @@
 "use client";
 
 import TopicCard from "@/components/Cards/TopicCard/TopicCard";
-import { TopicProps } from "@/types";
+import type { TopicProps } from "@/types";
 import React, { useEffect, useState } from "react";
 
-const Topics = () => {
+export default function Topics() {
 
   const [topics, setTopics] = useState<TopicProps[]>([])
 
@@ -23,8 +23,8 @@ const Topics = () => {
   }
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-useEffect(() => {
-    getAllTopics()
+  useEffect(() => {
+      getAllTopics()
   }, [])
 
   return (
@@ -53,5 +53,3 @@ useEffect(() => {
     </section>
   );
 };
-
-export default Topics;

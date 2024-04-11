@@ -6,7 +6,7 @@ import MainFeed from './MainFeed/MainFeed'
 import UserTab from './Usertab/UserTab'
 import Networking from './Networking/Networking'
 
-const Feed = () => {
+export default function Feed() {
   const [currentTab, setCurrentTab] = useState<string>("feed")
 
   return (
@@ -18,5 +18,3 @@ const Feed = () => {
     </div>
   )
 }
-
-export default Feed

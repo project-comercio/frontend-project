@@ -6,7 +6,6 @@ import Description from './sections/Description/Description'
 import Posts from './sections/Posts/Posts'
 import Activity from './sections/Activity/Activity'
 import Sidebar from '../home/sections/Sidebar/Sidebar'
-import UserTab from '../home/sections/Usertab/UserTab'
 
 export async function generateMetadata() {
   return getMetaData({
@@ -16,7 +15,7 @@ export async function generateMetadata() {
   })
 }
 
-const page = () => {
+export default function Page() {
   return (
     <>
       <Navbar variant='primary' />
@@ -34,5 +33,3 @@ const page = () => {
     </>
   )
 }
-
-export default page

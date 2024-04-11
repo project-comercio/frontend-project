@@ -9,11 +9,11 @@ import "swiper/css/bundle";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { MarketingCourseProps } from "@/types";
+import type { MarketingCourseProps } from "@/types";
 import CourseCard from "@/components/Cards/CourseCard/CourseCard";
 import Loader from "@/components/Config/Loader";
 
-const Marketing = () => {
+export default function Marketing() {
   
   const [data, setData] = useState<MarketingCourseProps[]>([])
 
@@ -78,5 +78,3 @@ const Marketing = () => {
     </section>
   ) : <Loader />
 };
-
-export default Marketing;

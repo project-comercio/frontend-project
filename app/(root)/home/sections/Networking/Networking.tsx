@@ -2,7 +2,7 @@ import { COMPANIES_DATA } from '@/constants/companies-data'
 import type { CompanyDataProps } from '@/types'
 import React from 'react'
 
-const Networking = () => {
+export default function Networking() {
   return (
     <div className='w-full flex flex-col gap-4'>
       <div className="border border-slate-200 bg-white rounded-lg py-4 px-4">
@@ -26,5 +26,3 @@ const Networking = () => {
     </div>
   )
 }
-
-export default Networking

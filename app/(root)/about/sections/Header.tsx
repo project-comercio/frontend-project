@@ -4,7 +4,7 @@ import { IoPeopleOutline } from "react-icons/io5";
 import { FaRegStar } from "react-icons/fa";
 import Link from "next/link";
 
-const Header = () => {
+export default function Header() {
   return (
     <section className="relative w-full flex justify-between lg:min-h-[720px]">
       <div className="lg:w-[50%] z-20 relative bg-gradient-to-r from-slate-950 to-slate-900 opacity-95 flex justify-end">
@@ -58,5 +58,3 @@ const Header = () => {
     </section>
   );
 };
-
-export default Header;

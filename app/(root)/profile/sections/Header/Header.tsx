@@ -3,7 +3,7 @@
 import { getUser } from '@/context/UserContext'
 import React from 'react'
 
-const Header = () => {
+export default function Header() {
   const {userData} = getUser()
 
   return (
@@ -31,5 +31,3 @@ const Header = () => {
     </section>
   )
 }
-
-export default Header

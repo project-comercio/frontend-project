@@ -1,18 +1,18 @@
 
-import { PopupProps } from "@/types";
+import type { PopupProps } from "@/types";
 import React from "react";
 import { IoCloseOutline } from "react-icons/io5";
 
-const Popup = ({
+export default function Popup({
   children,
   title,
   description,
   showState,
   setShowState,
   handleSubmit,
-}: PopupProps) => {
+}: PopupProps) {
   return (
-    <div className="popup-wrapper z-[999]">
+    <div className={`popup-wrapper z-[999] ${showState ? "block" : "hidden"}`}>
       <div className="glassmorphism">
         <div className="max-w-[800px] w-full p-10 bg-white rounded-xl">
           <div className="flex justify-between items-center">
@@ -45,5 +45,3 @@ const Popup = ({
     </div>
   );
 };
-
-export default Popup;

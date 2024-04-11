@@ -25,7 +25,6 @@ export const UserProvider = ({children} : {children: React.ReactNode}) => {
       const requisition = await fetch("/api/getCookies")
       const response = await requisition.json()
       setCookiesData(response)
-      console.log(response)
     } catch (error) {
       throw new Error("Não foi possível obter os dados da sessão do usuário!")
     }
