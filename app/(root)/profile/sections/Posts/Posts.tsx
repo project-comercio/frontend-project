@@ -1,4 +1,19 @@
-import React from 'react'
+"use client"
+
+import React, { cache, useState } from 'react'
+
+export const getUserPosts = cache(async () => {
+  console.log("executou")
+  const requisiton = await fetch("https://backend-repository.onrender.com/users/getUserPosts", {
+    method: "GET",
+    next: {
+      tags: ['get-user-posts']
+    }
+  })
+  const response = await requisiton.json()
+  
+  if (response.length) return response
+})
 
 const Posts = () => {
   return (
