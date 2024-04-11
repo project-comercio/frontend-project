@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { IoAddOutline } from "react-icons/io5";
 
-const Sidebar = () => {
+export default function Sidebar() {
 	const path = usePathname();
 
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -160,5 +160,3 @@ const Sidebar = () => {
 		</div>
 	);
 };
-
-export default Sidebar;

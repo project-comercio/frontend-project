@@ -3,7 +3,7 @@ import type { PopupProps } from "@/types";
 import React from "react";
 import { IoCloseOutline } from "react-icons/io5";
 
-export default function Popup({
+export default function PostPopup ({
   children,
   title,
   description,

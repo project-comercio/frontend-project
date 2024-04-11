@@ -1,8 +1,8 @@
 "use client"
 
-import React from 'react'
+import type React from 'react'
 
-const Form = () => {
+export default function Form() {
   return (
     <div className='w-full'>
       <form className='flex flex-col gap-6 w-full' onSubmit={(e: React.SyntheticEvent) => {
@@ -20,5 +20,3 @@ const Form = () => {
     </div>
   )
 }
-
-export default Form

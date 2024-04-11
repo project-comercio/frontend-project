@@ -15,12 +15,10 @@ export const getUserPosts = cache(async () => {
   if (response.length) return response
 })
 
-const Posts = () => {
+export default function Posts() {
   return (
     <section className='w-full bg-white rounded-lg border border-slate-200 p-4 lg:p-8'>
       Posts
     </section>
   )
 }
-
-export default Posts

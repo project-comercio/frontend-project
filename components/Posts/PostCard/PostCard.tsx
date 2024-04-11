@@ -12,12 +12,15 @@ import type { CommentProps, PostProps } from "@/types";
 import { getUser } from "@/context/UserContext";
 import { toast } from "react-toastify";
 import { IoIosSend } from "react-icons/io";
+import OpenPostCard from "../OpenPostCard/OpenPostCard";
 
 const PostCard = ({ postContent }: { postContent: PostProps }) => {
 	const { userData, getUserInfo } = getUser();
 
-	const [commentContent, setCommentContent] = useState<string>("")
-	const [postComments, setPostComments] = useState<CommentProps[]>([])
+	const [commentContent, setCommentContent] = useState<string>("");
+	const [postComments, setPostComments] = useState<CommentProps[]>([]);
+
+	const [openPostCard, setOpenPostCard] = useState<boolean>(false);
 
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	const [postLikes, setPostsLikes] = useState<number | any>(postContent.likes);
@@ -90,137 +93,153 @@ const PostCard = ({ postContent }: { postContent: PostProps }) => {
 							content: commentContent,
 							creatorId: userData?.id,
 							creatorImage: userData?.picture,
-							creatorName: userData?.username
-						})
-					}
-				)
+							creatorName: userData?.username,
+						}),
+					},
+				);
 				if (response.ok) {
-					await getPostsComments()
+					await getPostsComments();
 				}
 			} else {
-				toast.error("Digite uma mensagem válida!")
+				toast.error("Digite uma mensagem válida!");
 			}
 		} catch (error) {
 			throw new Error(`Não foi possível publicar o comentário: ${error}`);
 		}
-	}
-	
+	};
+
 	const getPostsComments = async () => {
 		try {
-			const requisiton = await fetch(`https://backend-repository.onrender.com/comments/findPostComments/${postContent.id}`, {
-				method: "GET"
-			})
-			const response = await requisiton.json()
-			if (response) setPostComments(response)
+			const requisiton = await fetch(
+				`https://backend-repository.onrender.com/comments/findPostComments/${postContent.id}`,
+				{
+					method: "GET",
+				},
+			);
+			const response = await requisiton.json();
+			if (response) setPostComments(response);
 		} catch (error) {
-			console.log(error)
+			console.log(error);
 		}
-	}
+	};
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
-		getPostsComments()
-	}, [])
+		getPostsComments();
+	}, []);
 
 	return (
-		<div className="w-full bg-white border drop-shadow-sm border-slate-200 p-4 lg:p-6 rounded-lg">
-			<div className="flex w-full justify-between gap-3 items-center">
-				<figure className="h-8 w-8 cursor-pointer">
-					<img
-						src={postContent.creatorPhoto}
-						alt="profile-picture"
-						className="rounded-full h-full w-full"
-					/>
-				</figure>
-				<div className="w-full flex-1">
-					<h3 className="text-sm font-semibold">{postContent.creatorName}</h3>
-					<p className="text-xs text-slate-500">postado a 1 minuto atrás</p>
-				</div>
-				<div className="cursor-pointer">
-					<IoEllipsisHorizontalSharp size={20} className="gray-icon" />
-				</div>
-			</div>
-			<article className="mt-6">
-				<p className="text-sm">{postContent.content}</p>
-			</article>
-			{postContent.images[0] !== "" ? (
-				<figure className="mt-4 w-full rounded-md h-[350px] group relative block overflow-hidden">
-					<img
-						src={postContent.images[0]}
-						alt="post-image"
-						className="rounded-md absolute inset-0 h-full w-full object-cover object-center transition-all duration-300 group-hover:scale-105"
-					/>
-				</figure>
-			) : null}
-			<div className="w-full flex items-center justify-start gap-4 lg:gap-0 lg:justify-around mt-4">
-				<div className="items-center flex gap-3 cursor-pointer">
-					<FaRegComment size={18} className="gray-icon" />
-					<p className="lg:block hidden text-slate-500 text-xs">
-						{postContent.comments} comentários
-					</p>
-				</div>
-				<div className="items-center flex gap-3 cursor-pointer">
-					{isLiked ? (
-						<FaHeart
-							size={18}
-							className="colored-icon"
-							onClick={() => handleDislikePost()}
+		<>
+			<div className="w-full bg-white border drop-shadow-sm border-slate-200 p-4 lg:p-6 rounded-lg">
+				<div className="flex w-full justify-between gap-3 items-center">
+					<figure className="h-8 w-8 cursor-pointer">
+						<img
+							src={postContent.creatorPhoto}
+							alt="profile-picture"
+							className="rounded-full h-full w-full"
 						/>
-					) : (
-						<FaRegHeart
-							size={18}
-							className="gray-icon"
-							onClick={() => handleLikePost()}
+					</figure>
+					<div className="w-full flex-1">
+						<h3 className="text-sm font-semibold">{postContent.creatorName}</h3>
+						<p className="text-xs text-slate-500">postado a 1 minuto atrás</p>
+					</div>
+					<div className="cursor-pointer">
+						<IoEllipsisHorizontalSharp size={20} className="gray-icon" />
+					</div>
+				</div>
+				<article className="mt-6">
+					<p className="text-sm">{postContent.content}</p>
+				</article>
+				{postContent.images[0] !== "" ? (
+					<figure className="mt-4 w-full rounded-md h-[350px] group relative block overflow-hidden">
+						<img
+							src={postContent.images[0]}
+							alt="post-image"
+							className="rounded-md absolute inset-0 h-full w-full object-cover object-center transition-all duration-300 group-hover:scale-105"
 						/>
-					)}
-					<p className="lg:block hidden text-slate-500 text-xs">
-						{postLikes} curtidas
-					</p>
+					</figure>
+				) : null}
+				<div className="w-full flex items-center justify-start gap-4 lg:gap-0 lg:justify-around mt-4">
+					{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+					<div className="items-center flex gap-3 cursor-pointer" onClick={() => setOpenPostCard(!openPostCard)}>
+						<FaRegComment size={18} className="gray-icon" />
+						<p className="lg:block hidden text-slate-500 text-xs">
+							{postContent.comments} comentários
+						</p>
+					</div>
+					<div className="items-center flex gap-3 cursor-pointer">
+						{isLiked ? (
+							<FaHeart
+								size={18}
+								className="colored-icon"
+								onClick={() => handleDislikePost()}
+							/>
+						) : (
+							<FaRegHeart
+								size={18}
+								className="gray-icon"
+								onClick={() => handleLikePost()}
+							/>
+						)}
+						<p className="lg:block hidden text-slate-500 text-xs">
+							{postLikes} curtidas
+						</p>
+					</div>
+					<div className="items-center flex gap-3 cursor-pointer">
+						<FaRegShareFromSquare size={18} className="gray-icon" />
+						<p className="lg:block hidden text-slate-500 text-xs">
+							{postContent.shares} envios
+						</p>
+					</div>
+					<div className="items-center flex gap-3 cursor-pointer">
+						<LuShare2 size={18} className="gray-icon" />
+						<p className="lg:block hidden text-slate-500 text-xs">
+							compartilhar
+						</p>
+					</div>
 				</div>
-				<div className="items-center flex gap-3 cursor-pointer">
-					<FaRegShareFromSquare size={18} className="gray-icon" />
-					<p className="lg:block hidden text-slate-500 text-xs">
-						{postContent.shares} envios
-					</p>
-				</div>
-				<div className="items-center flex gap-3 cursor-pointer">
-					<LuShare2 size={18} className="gray-icon" />
-					<p className="lg:block hidden text-slate-500 text-xs">compartilhar</p>
+				<div className="w-full flex items-center mt-8 justify-between gap-3">
+					<figure className="w-8 h-8">
+						<img
+							src={userData?.picture}
+							alt="profile-image"
+							className="rounded-full w-full h-full"
+						/>
+					</figure>
+					<input
+						type="text"
+						name="comment"
+						id="comment"
+						autoComplete="off"
+						spellCheck="false"
+						minLength={1}
+						maxLength={60}
+						onChange={(e) => setCommentContent(e.target.value)}
+						placeholder="Digite algum comentário"
+						className="w-full px-4 py-2 outline-none text-xs bg-slate-100 rounded-md flex-1 text-slate-600"
+					/>
+					<div className="justify-around flex gap-2 items-center">
+						<MdOutlineEmojiEmotions
+							className="gray-icon cursor-pointer"
+							size={22}
+						/>
+						<MdOutlineImage className="gray-icon cursor-pointer" size={22} />
+						<IoIosSend
+							className={`cursor-pointer ${
+								commentContent !== "" ? "colored-icon" : "gray-icon"
+							}`}
+							onClick={() => {
+								if (commentContent !== "") {
+									createComment();
+								}
+							}}
+							size={22}
+						/>
+					</div>
 				</div>
 			</div>
-			<div className="w-full flex items-center mt-8 justify-between gap-3">
-				<figure className="w-8 h-8">
-					<img
-						src={userData?.picture}
-						alt="profile-image"
-						className="rounded-full w-full h-full"
-					/>
-				</figure>
-				<input
-					type="text"
-					name="comment"
-					id="comment"
-					autoComplete="off"
-					spellCheck="false"
-					minLength={1}
-					maxLength={60}
-					onChange={(e) => setCommentContent(e.target.value)}
-					placeholder="Digite algum comentário"
-					className="w-full px-4 py-2 outline-none text-xs bg-slate-100 rounded-md flex-1 text-slate-600"
-				/>
-				<div className="justify-around flex gap-2 items-center">
-					<MdOutlineEmojiEmotions
-						className="gray-icon cursor-pointer"
-						size={22}
-					/>
-					<MdOutlineImage className="gray-icon cursor-pointer" size={22} />
-					<IoIosSend className={`cursor-pointer ${commentContent !== "" ? "colored-icon" : "gray-icon"}`} onClick={() => {
-						if (commentContent !== "") {
-							createComment()
-						}
-					}} size={22} />
-				</div>
-			</div>
-		</div>
+			<OpenPostCard showState={openPostCard} setShowState={setOpenPostCard} />
+		</>
 	);
 };
 

@@ -9,7 +9,7 @@ import type { CreatePostProps } from "./types";
 import UploadPhoto from "@/components/Config/UploadPhoto";
 import Link from "next/link";
 
-const CreatePost = ({ handleGetAllPost }: CreatePostProps) => {
+export default function CreatePost({ handleGetAllPost }: CreatePostProps) {
 	const { userData } = getUser();
 
 	const [postContent, setPostContent] = useState<string>("");
@@ -100,5 +100,3 @@ const CreatePost = ({ handleGetAllPost }: CreatePostProps) => {
 		</section>
 	);
 };
-
-export default CreatePost;

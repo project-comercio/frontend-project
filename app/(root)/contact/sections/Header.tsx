@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "./Form";
 
-const Header = () => {
+export default function Header() {
   return (
     <section className="relative w-full flex justify-center lg:min-h-[720px]">
       <div className="lg:w-full z-20 relative bg-gradient-to-r from-slate-950 to-slate-900 opacity-95 flex justify-center" />
@@ -28,5 +28,3 @@ const Header = () => {
     </section>
   );
 };
-
-export default Header;
