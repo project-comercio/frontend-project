@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoEllipsisHorizontalSharp } from "react-icons/io5";
 import { FaRegComment } from "react-icons/fa";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
@@ -8,10 +8,10 @@ import { FaRegShareFromSquare } from "react-icons/fa6";
 import { LuShare2 } from "react-icons/lu";
 import { MdOutlineEmojiEmotions } from "react-icons/md";
 import { MdOutlineImage } from "react-icons/md";
-import { MdInsertLink } from "react-icons/md";
 import type { CommentProps, PostProps } from "@/types";
 import { getUser } from "@/context/UserContext";
 import { toast } from "react-toastify";
+import { IoIosSend } from "react-icons/io";
 
 const PostCard = ({ postContent }: { postContent: PostProps }) => {
 	const { userData, getUserInfo } = getUser();
@@ -117,6 +117,10 @@ const PostCard = ({ postContent }: { postContent: PostProps }) => {
 		}
 	}
 
+	useEffect(() => {
+		getPostsComments()
+	}, [])
+
 	return (
 		<div className="w-full bg-white border drop-shadow-sm border-slate-200 p-4 lg:p-6 rounded-lg">
 			<div className="flex w-full justify-between gap-3 items-center">
@@ -209,7 +213,11 @@ const PostCard = ({ postContent }: { postContent: PostProps }) => {
 						size={22}
 					/>
 					<MdOutlineImage className="gray-icon cursor-pointer" size={22} />
-					<MdInsertLink className="gray-icon cursor-pointer" size={22} />
+					<IoIosSend className={`cursor-pointer ${commentContent !== "" ? "colored-icon" : "gray-icon"}`} onClick={() => {
+						if (commentContent !== "") {
+							createComment()
+						}
+					}} size={22} />
 				</div>
 			</div>
 		</div>
