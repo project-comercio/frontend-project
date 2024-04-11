@@ -13,11 +13,13 @@ import { getUser } from "@/context/UserContext";
 import { toast } from "react-toastify";
 import { IoIosSend } from "react-icons/io";
 import OpenPostCard from "../OpenPostCard/OpenPostCard";
+import UploadPhoto from "@/components/Config/UploadPhoto";
 
 const PostCard = ({ postContent }: { postContent: PostProps }) => {
 	const { userData, getUserInfo } = getUser();
 
 	const [commentContent, setCommentContent] = useState<string>("");
+	const [commentImage, setCommentImage] = useState<string>("")
 	const [postComments, setPostComments] = useState<CommentProps[]>([]);
 
 	const [openPostCard, setOpenPostCard] = useState<boolean>(false);
@@ -93,11 +95,13 @@ const PostCard = ({ postContent }: { postContent: PostProps }) => {
 							content: commentContent,
 							creatorId: userData?.id,
 							creatorImage: userData?.picture,
-							creatorName: userData?.username,
+							creatorName: userData?.username
 						}),
 					},
 				);
 				if (response.ok) {
+					setCommentContent("")
+					setCommentImage("")
 					await getPostsComments();
 				}
 			} else {
@@ -128,7 +132,7 @@ const PostCard = ({ postContent }: { postContent: PostProps }) => {
 		getPostsComments()
 	}, [])
 
-	return postLikes ? (
+	return isLiked ? (
 		<>
 			<div className="w-full bg-white border drop-shadow-sm border-slate-200 p-4 lg:p-6 rounded-lg">
 				<div className="flex w-full justify-between gap-3 items-center">
@@ -216,6 +220,7 @@ const PostCard = ({ postContent }: { postContent: PostProps }) => {
 						spellCheck="false"
 						minLength={1}
 						maxLength={60}
+						value={commentContent}
 						onChange={(e) => setCommentContent(e.target.value)}
 						placeholder="Digite algum comentário"
 						className="w-full px-4 py-2 outline-none text-xs bg-slate-100 rounded-md flex-1 text-slate-600"
@@ -225,7 +230,9 @@ const PostCard = ({ postContent }: { postContent: PostProps }) => {
 							className="gray-icon cursor-pointer"
 							size={22}
 						/>
-						<MdOutlineImage className="gray-icon cursor-pointer" size={22} />
+						<UploadPhoto file={commentImage} setFile={setCommentImage}>
+							<MdOutlineImage className="gray-icon cursor-pointer" size={22} />
+						</UploadPhoto>
 						<IoIosSend
 							className={`cursor-pointer ${
 								commentContent !== "" ? "colored-icon" : "gray-icon"

@@ -61,7 +61,7 @@ const OpenPostCard = ({
 						</figure>
 					) : null}
 				</article>
-				<div className="justify-between flex mt-4 border-b border-slate-200 pb-4">
+				<div className="justify-between flex mt-4 border-b border-slate-200 pb-6">
 					<div className="w-full flex justify-start items-center">
 						<div className="items-center flex gap-3 cursor-pointer">
 							<FaRegComment size={18} className="gray-icon" />
@@ -79,7 +79,7 @@ const OpenPostCard = ({
 						</div>
 					</div>
 				</div>
-        <div className="mt-4">
+        <div className="mt-6 flex flex-col gap-6">
           {postComments.length ? (
             <>
               {postComments.map((comment: CommentProps, index: number) => (
