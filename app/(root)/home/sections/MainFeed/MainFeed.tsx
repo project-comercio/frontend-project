@@ -10,11 +10,7 @@ export default function MainFeed() {
 
   const handleGetAllPosts = async () => {
     const requisiton = await fetch("https://backend-repository.onrender.com/posts/", {
-      method: "GET",
-      cache: 'force-cache',
-      next: {
-        revalidate: 2 * 60
-      }
+      method: "GET"
     })
     const response = await requisiton.json()
     if (response.length) setPosts(response)

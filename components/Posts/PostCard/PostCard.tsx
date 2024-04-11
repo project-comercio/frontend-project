@@ -125,10 +125,10 @@ const PostCard = ({ postContent }: { postContent: PostProps }) => {
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
-		getPostsComments();
-	}, []);
+		getPostsComments()
+	}, [])
 
-	return (
+	return postLikes ? (
 		<>
 			<div className="w-full bg-white border drop-shadow-sm border-slate-200 p-4 lg:p-6 rounded-lg">
 				<div className="flex w-full justify-between gap-3 items-center">
@@ -147,24 +147,26 @@ const PostCard = ({ postContent }: { postContent: PostProps }) => {
 						<IoEllipsisHorizontalSharp size={20} className="gray-icon" />
 					</div>
 				</div>
-				<article className="mt-6">
+				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+				<article className="mt-6" onClick={() => setOpenPostCard(!openPostCard)}>
 					<p className="text-sm">{postContent.content}</p>
 				</article>
 				{postContent.images[0] !== "" ? (
-					<figure className="mt-4 w-full rounded-md h-[350px] group relative block overflow-hidden">
+					// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
+					<figure className="cursor-pointer mt-4 w-full rounded-md h-[350px] group relative block overflow-hidden" onClick={() => setOpenPostCard(!openPostCard)}>
 						<img
 							src={postContent.images[0]}
 							alt="post-image"
-							className="rounded-md absolute inset-0 h-full w-full object-cover object-center transition-all duration-300 group-hover:scale-105"
+							className="rounded-md absolute inset-0 h-full w-full object-cover object-center transition-all duration-500 group-hover:scale-105"
 						/>
 					</figure>
 				) : null}
-				<div className="w-full flex items-center justify-start gap-4 lg:gap-0 lg:justify-around mt-4">
+				<div className="w-full flex items-center justify-start gap-4 lg:gap-0 lg:justify-around mt-4" >
 					{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 					<div className="items-center flex gap-3 cursor-pointer" onClick={() => setOpenPostCard(!openPostCard)}>
 						<FaRegComment size={18} className="gray-icon" />
-						<p className="lg:block hidden text-slate-500 text-xs">
-							{postContent.comments} comentários
+						<p className="lg:block hidden text-slate-500 text-xs transition-all duration-300 hover:text-slate-700">
+							{postComments.length} comentários
 						</p>
 					</div>
 					<div className="items-center flex gap-3 cursor-pointer">
@@ -181,19 +183,19 @@ const PostCard = ({ postContent }: { postContent: PostProps }) => {
 								onClick={() => handleLikePost()}
 							/>
 						)}
-						<p className="lg:block hidden text-slate-500 text-xs">
+						<p className="lg:block hidden text-slate-500 text-xs transition-all duration-300 hover:text-slate-700">
 							{postLikes} curtidas
 						</p>
 					</div>
 					<div className="items-center flex gap-3 cursor-pointer">
 						<FaRegShareFromSquare size={18} className="gray-icon" />
-						<p className="lg:block hidden text-slate-500 text-xs">
+						<p className="lg:block hidden text-slate-500 text-xs transition-all duration-300 hover:text-slate-700">
 							{postContent.shares} envios
 						</p>
 					</div>
 					<div className="items-center flex gap-3 cursor-pointer">
 						<LuShare2 size={18} className="gray-icon" />
-						<p className="lg:block hidden text-slate-500 text-xs">
+						<p className="lg:block hidden text-slate-500 text-xs transition-all duration-300 hover:text-slate-700">
 							compartilhar
 						</p>
 					</div>
@@ -238,9 +240,9 @@ const PostCard = ({ postContent }: { postContent: PostProps }) => {
 					</div>
 				</div>
 			</div>
-			<OpenPostCard showState={openPostCard} setShowState={setOpenPostCard} />
+			<OpenPostCard showState={openPostCard} setShowState={setOpenPostCard} postContent={postContent} />
 		</>
-	);
+	) : null;
 };
 
 export default PostCard;
