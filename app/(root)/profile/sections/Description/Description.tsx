@@ -6,7 +6,7 @@ import { getUser } from '@/context/UserContext'
 import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 
-const Description = () => {
+export default function Description() {
   const {userData, getUserInfo} = getUser()
 
   const [textContent, setTextContent] = useState<string>("")
@@ -56,5 +56,3 @@ const Description = () => {
     </section>
   )
 }
-
-export default Description

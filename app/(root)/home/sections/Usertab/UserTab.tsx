@@ -1,7 +1,8 @@
 "use client";
 
 import { userTabLinks } from "@/constants/user-tab";
-import React, { useEffect, useState } from "react";
+import type React from "react";
+import { useEffect, useState } from "react";
 import { CiGrid31 } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import { CiVideoOn } from "react-icons/ci";
@@ -27,7 +28,7 @@ interface SidebarIconProps {
   shop: React.JSX.Element
 }
 
-const UserTab = ({currentTab, setCurrentTab}: UserTabProps) => {
+export default function UserTab({currentTab, setCurrentTab}: UserTabProps) {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [selectedTab, setSelectedTab] = useState<UserTabLink>({
     icon: "feed",
@@ -160,5 +161,3 @@ const UserTab = ({currentTab, setCurrentTab}: UserTabProps) => {
     </div>
   );
 };
-
-export default UserTab;

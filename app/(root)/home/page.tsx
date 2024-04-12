@@ -12,7 +12,7 @@ export async function generateMetadata() {
   })
 }
 
-const page = () => {
+export default function Page() {
   return (
     <>
       <Navbar variant='primary' />
@@ -22,5 +22,3 @@ const page = () => {
     </>
   )
 }
-
-export default page

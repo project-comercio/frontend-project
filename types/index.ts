@@ -130,3 +130,14 @@ export interface CompanyDataProps {
   posts: number
   followers: number
 }
+
+export interface CommentProps {
+  id: string
+  postId: string
+  content: string
+  creatorId: string
+  creatorImage: string
+  creatorName: string
+  image?: string[]
+  createdAt?: Date
+}
