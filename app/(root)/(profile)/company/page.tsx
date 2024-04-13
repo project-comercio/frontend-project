@@ -7,3 +7,11 @@ export async function generateMetadata() {
     image: ""
   })
 }
+
+export default function Page() {
+  return (
+    <div>
+      company page
+    </div>
+  )
+}
