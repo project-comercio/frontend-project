@@ -2,7 +2,7 @@
 
 import { ApolloProvider } from "@apollo/client";
 import { createApolloClient } from "@/utils/routes/apollo-client"; 
-import React from "react";
+import type React from "react";
 
 export const ApolloContext = ({
   children,
