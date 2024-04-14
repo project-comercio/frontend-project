@@ -13,7 +13,7 @@ export const navbarLinks = [
   },
   {
     label: "Perfil",
-    href: "/profile"
+    href: "/profile/my-profile"
   },
   {
     label: "Sobre",

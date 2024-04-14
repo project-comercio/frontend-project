@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react'
 import Sidebar from '../Sidebar'
-import MainFeed from '../MainFeed'
 import UserTab from '../Usertab'
 import Networking from '../Networking'
+import MainFeed from '../MainFeed'
 
 export default function Feed() {
   const [currentTab, setCurrentTab] = useState<string>("feed")

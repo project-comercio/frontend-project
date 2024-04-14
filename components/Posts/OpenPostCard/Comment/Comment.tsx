@@ -12,8 +12,9 @@ export default function Comment({
 					alt="comment-creator-profile-picture"
 				/>
 			</figure>
-			<article className="w-full flex items-center">
-				<p className="text-xs lg:text-sm text-slate-700">{commentContent.content}</p>
+			<article className="w-full flex flex-col justify-center">
+				<p className="text-xs lg:text-sm text-slate-700">{commentContent.creatorName}</p>
+				<p className="text-xs text-slate-500">{commentContent.content}</p>
 			</article>
 		</div>
 	);

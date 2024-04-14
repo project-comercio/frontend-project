@@ -8,7 +8,7 @@ export default function Networking() {
       <div className="border border-slate-200 bg-white rounded-lg py-4 px-4">
         <div className='grid xl:grid-cols-3 grid-cols-2 lg:grid-cols-1 w-full gap-4'>
           {COMPANIES_DATA.map((company: CompanyDataProps, index: number) => (
-            <div className='w-full flex xl:flex-col lg:gap-4 xl:gap-0 gap-0 lg:flex-row flex-col place-items-center p-4 border border-slate-100 rounded-md transition-all duration-300 hover:scale-105 cursor-pointer'>
+            <div className='w-full flex xl:flex-col lg:gap-4 xl:gap-0 gap-0 lg:flex-row flex-col place-items-center p-4 border border-slate-100 rounded-md transition-all duration-300 hover:scale-105 cursor-pointer' key={`${company.companyName}-${index}`}>
               <figure className='h-8 w-8'>
                 <img className='rounded-full w-auto h-auto' alt='company-logo' src={company.logo} />
               </figure>
