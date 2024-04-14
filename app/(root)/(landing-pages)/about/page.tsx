@@ -16,7 +16,7 @@ export default function Page() {
   return (
     <>
       <Navbar variant="secondary" />
-      <main className="min-h-[62vh] pt-16">
+      <main className="min-h-[62vh] bg-[#fafafa] pt-16">
         <Header />
         <Collaborators />
       </main>
