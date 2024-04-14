@@ -13,7 +13,7 @@ export const COLLABORATORS = [
 		email: "email.testes@gmail.com",
 		linkedin: "/",
 		github: "/",
-		skills: ['typescript', 'nextjs', 'nestjs', 'golang', 'remix', 'tailwind', 'graphql'],
+		skills: ['typescript', 'nextjs', 'nestjs', 'golang', 'remix', 'graphql'],
 		name: "Vitin Teacher",
 		description: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. adipisicing elit.",
 	},
@@ -31,7 +31,7 @@ export const COLLABORATORS = [
 		email: "email.testes@gmail.com",
 		linkedin: "/",
 		github: "/",
-		skills: ['html', 'css', 'c'],
+		skills: ['html', 'css', 'c', 'cs2'],
 		name: "Matheus Pidao",
 		description: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. adipisicing elit.",
 	}
