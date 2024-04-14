@@ -1,4 +1,4 @@
-import { TopicProps } from "@/types";
+import type { TopicProps } from "@/types";
 import Link from "next/link";
 import React from "react";
 

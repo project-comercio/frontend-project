@@ -6,16 +6,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { IoMenuOutline } from "react-icons/io5";
 import MiniNavbar from "./MiniNavbar";
-
-interface NavbarLinkProps {
-  label: string;
-  href: string;
-}
-
-interface NavbarProps {
-  transparent?: boolean;
-  variant?: 'primary' | 'secondary'
-}
+import type { NavbarLinkProps, NavbarProps } from "./types";
 
 const Navbar = ({ transparent, variant }: NavbarProps) => {
   const [showMiniNavbar, setShowMiniNavbar] = useState<boolean>(false)

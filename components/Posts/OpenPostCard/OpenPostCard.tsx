@@ -4,11 +4,7 @@ import React, { useEffect, useState } from "react";
 import { FaRegComment } from "react-icons/fa";
 import { FaRegShareFromSquare } from "react-icons/fa6";
 import Comment from "./Comment/Comment";
-interface OpenPostCardProps {
-	showState: boolean;
-	setShowState(arg: boolean): void;
-	postContent: PostProps;
-}
+import type { OpenPostCardProps } from "./types";
 
 const OpenPostCard = ({
 	showState,

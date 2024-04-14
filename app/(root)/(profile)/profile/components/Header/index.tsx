@@ -2,6 +2,7 @@
 
 import { getUser } from "@/context/UserContext";
 import React, { useState } from "react";
+import { IoMdImage } from "react-icons/io";
 
 export default function Header() {
 	const { userData } = getUser();
@@ -11,18 +12,19 @@ export default function Header() {
 	return (
 		<section className="w-full bg-white rounded-lg border border-slate-200">
 			<div
-				className="rounded-t-lg w-full h-[220px] bg-cover bg-no-repeat bg-center"
+				className="rounded-t-lg w-full h-[220px] bg-cover bg-no-repeat bg-top"
 				style={{
 					backgroundImage: `url("https://cdn.mobilesyrup.com/wp-content/uploads/2020/11/mac0s-wallpaper-11-scaled.jpg")`,
 				}}
 			/>
 			<div className="p-4 lg:p-8 w-full">
-				<figure className="max-h-28 max-w-28">
+				<figure className="max-h-28 cursor-pointer max-w-28 relative items-center flex justify-center">
 					<img
 						src={userData?.picture}
 						alt={`${userData?.username}-profile-picture`}
-						className="-mt-20 w-full h-full rounded-full selection:bg-transparent"
+						className="-mt-20 w-full h-full rounded-full transition-all selection:bg-transparent z-10 hover:z-0 cursor-pointer hover:brightness-50 duration-200"
 					/>
+					<IoMdImage size={28} className="ease absolute white-icon -mt-16" />
 				</figure>
 				<article className="mt-4">
 					<h2 className="text-base lg:text-lg font-semibold items-center flex gap-1">
