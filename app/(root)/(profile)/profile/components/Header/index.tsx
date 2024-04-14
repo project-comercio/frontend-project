@@ -12,9 +12,9 @@ export default function Header() {
 	return (
 		<section className="w-full bg-white rounded-lg border border-slate-200">
 			<div
-				className="rounded-t-lg w-full h-[220px] bg-cover bg-no-repeat bg-top"
+				className="rounded-t-lg w-full h-[220px] bg-cover bg-no-repeat bg-center"
 				style={{
-					backgroundImage: `url("https://cdn.mobilesyrup.com/wp-content/uploads/2020/11/mac0s-wallpaper-11-scaled.jpg")`,
+					backgroundImage: `url("https://media.idownloadblog.com/wp-content/uploads/2021/05/macOS-Big-Sur-wallpaper-inspiration-javierocasio-idownloadblog-Waves-Dark-Alt-4K.jpg")`,
 				}}
 			/>
 			<div className="p-4 lg:p-8 w-full">
@@ -50,7 +50,7 @@ export default function Header() {
 				<div className="flex gap-4 items-center w-full justify-end mt-4">
 					{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
           <div
-						className="px-4 py-1 bg-principal rounded-full text-xs text-center text-white cursor-pointer transition-all duration-300 hover:brightness-105"
+						className="px-6 py-1 bg-principal rounded-full text-xs text-center text-white cursor-pointer transition-all duration-300 hover:brightness-105"
 						onClick={() => {
 							setShowEditProfile(!showEditProfile);
 						}}
