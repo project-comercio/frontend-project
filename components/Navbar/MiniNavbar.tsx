@@ -7,11 +7,7 @@ import {
 import { BsGrid } from "react-icons/bs";
 import { MdOutlineLocalFireDepartment } from "react-icons/md";
 import { PiUserCircleLight } from "react-icons/pi";
-
-interface MiniNavbarProps {
-  showMenu: boolean
-  setShowMenu(arg: boolean): void
-}
+import type { MiniNavbarProps } from './types';
 
 const MiniNavbar = ({showMenu, setShowMenu} : MiniNavbarProps) => {
   return (

@@ -132,7 +132,7 @@ const PostCard = ({ postContent }: { postContent: PostProps }) => {
 		getPostsComments()
 	}, [])
 
-	return isLiked ? (
+	return (
 		<>
 			<div className="w-full bg-white border drop-shadow-sm border-slate-200 p-4 lg:p-6 rounded-lg">
 				<div className="flex w-full justify-between gap-3 items-center">
@@ -249,7 +249,7 @@ const PostCard = ({ postContent }: { postContent: PostProps }) => {
 			</div>
 			<OpenPostCard showState={openPostCard} setShowState={setOpenPostCard} postContent={postContent} />
 		</>
-	) : null;
+	) 
 };
 
 export default PostCard;

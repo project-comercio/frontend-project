@@ -1,4 +1,4 @@
-import { MarketingCourseProps } from "@/types";
+import type { MarketingCourseProps } from "@/types";
 import { formatCurrency } from "@/utils/functions/formatCurrency";
 import React from "react";
 

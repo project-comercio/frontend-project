@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import type { CreatePostProps } from "./types";
 import UploadPhoto from "@/components/Config/UploadPhoto";
 import Link from "next/link";
+import { revalidateTag } from "next/cache";
 
 export default function CreatePost({ handleGetAllPost }: CreatePostProps) {
 	const { userData } = getUser();
@@ -34,8 +35,11 @@ export default function CreatePost({ handleGetAllPost }: CreatePostProps) {
 				},
 			);
 			if (response.ok) {
+				revalidateTag('get-all-posts')
+
 				setPostContent("");
 				setPostImage("");
+
 				toast.success("Postagem adicionada com sucesso!");
 				handleGetAllPost();
 			}

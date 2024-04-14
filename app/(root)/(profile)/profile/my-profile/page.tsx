@@ -1,11 +1,11 @@
 import Navbar from '@/components/Navbar/Navbar'
 import { getMetaData } from '@/utils/getMetaData'
 import React from 'react'
-import Header from './sections/Header'
-import Description from './sections/Description'
-import Posts from './sections/Posts'
-import Activity from './sections/Activity'
-import Sidebar from '../../(feed)/home/sections/Sidebar'
+import Description from '../components/Description'
+import Posts from '../components/Posts'
+import Header from '../components/Header'
+import Activity from '../components/Activity'
+import Sidebar from '../../../(feed)/home/components/Sidebar'
 
 export async function generateMetadata() {
   return getMetaData({
