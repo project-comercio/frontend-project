@@ -9,7 +9,7 @@ import Sidebar from '../../../(feed)/home/components/Sidebar'
 
 export async function generateMetadata() {
   return getMetaData({
-    title: "teste",
+    title: "Perfil do usuário",
     description: "Descrição",
     image: ""
   })
