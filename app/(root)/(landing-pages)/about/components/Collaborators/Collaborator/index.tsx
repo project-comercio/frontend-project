@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { CollaboratorCardProps } from "./types";
 import { FaGithub, FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 
@@ -35,16 +36,20 @@ export const Collaborator: React.FC<CollaboratorCardProps> = ({
 			</div>
 			<div className="mt-6 flex w-full flex-wrap gap-3">
 				{colaborator.github ? (
-					<FaGithub
-						size={24}
-						className="cursor-pointer transition-300 transition-all hover:scale-[101%] gray-icon"
-					/>
+          <Link href={colaborator.github} target="_blankF">
+          	<FaGithub
+              size={24}
+              className="cursor-pointer transition-300 transition-all hover:scale-[101%] gray-icon"
+					  />
+          </Link>
 				) : null}
 				{colaborator.linkedin ? (
-					<FaLinkedin
-						size={24}
-						className="cursor-pointer transition-300 transition-all hover:scale-[101%] gray-icon"
-					/>
+          <Link href={colaborator.linkedin} target="_blank">
+            <FaLinkedin
+              size={24}
+              className="cursor-pointer transition-300 transition-all hover:scale-[101%] gray-icon"
+            />
+          </Link>
 				) : null}
 				{colaborator.instagram ? (
 					<FaInstagram

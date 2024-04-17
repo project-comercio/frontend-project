@@ -3,6 +3,7 @@
 import { getUser } from "@/context/UserContext";
 import React, { useState } from "react";
 import { IoMdImage } from "react-icons/io";
+import UpdateUserProfile from "./EditUserProfile";
 
 export default function Header() {
 	const { userData } = getUser();
@@ -50,7 +51,7 @@ export default function Header() {
 				<div className="flex gap-4 items-center w-full justify-end mt-4">
 					{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
           <div
-						className="px-6 py-1 bg-principal rounded-full text-xs text-center text-white cursor-pointer transition-all duration-300 hover:brightness-105"
+						className="px-6 py-1 bg-principal rounded-full text-xs text-center text-white cursor-pointer transition-all duration-300 hover:brightness-125"
 						onClick={() => {
 							setShowEditProfile(!showEditProfile);
 						}}
@@ -59,6 +60,8 @@ export default function Header() {
 					</div>
 				</div>
 			</div>
+
+      <UpdateUserProfile setShowState={setShowEditProfile} showState={showEditProfile} />
 		</section>
 	);
 }
