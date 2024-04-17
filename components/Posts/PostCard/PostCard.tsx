@@ -15,7 +15,7 @@ import { IoIosSend } from "react-icons/io";
 import OpenPostCard from "../OpenPostCard/OpenPostCard";
 import UploadPhoto from "@/components/Config/UploadPhoto";
 
-const PostCard = ({ postContent, variant }: { postContent: PostProps, variant: string }) => {
+const PostCard = ({ postContent, variant }: { postContent: PostProps, variant?: string }) => {
 	const { userData, getUserInfo } = getUser();
 
 	const [commentContent, setCommentContent] = useState<string>("");
