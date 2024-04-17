@@ -15,7 +15,7 @@ import { IoIosSend } from "react-icons/io";
 import OpenPostCard from "../OpenPostCard/OpenPostCard";
 import UploadPhoto from "@/components/Config/UploadPhoto";
 
-const PostCard = ({ postContent }: { postContent: PostProps }) => {
+const PostCard = ({ postContent, variant }: { postContent: PostProps, variant: string }) => {
 	const { userData, getUserInfo } = getUser();
 
 	const [commentContent, setCommentContent] = useState<string>("");
@@ -165,7 +165,7 @@ const PostCard = ({ postContent }: { postContent: PostProps }) => {
 						/>
 					</figure>
 				) : null}
-				<div className="w-full flex items-center justify-start gap-4 lg:gap-0 lg:justify-around mt-4" >
+				<div className={`w-full flex items-center justify-start gap-4 mt-4 ${variant === 'profilePost' ? "lg:justify-start lg:gap-4" : "lg:justify-around lg:gap-0"}`}>
 					{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 					<div className="items-center flex gap-3 cursor-pointer" onClick={() => setOpenPostCard(!openPostCard)}>
 						<FaRegComment size={18} className="gray-icon" />
@@ -204,7 +204,7 @@ const PostCard = ({ postContent }: { postContent: PostProps }) => {
 						</p>
 					</div>
 				</div>
-				<div className="w-full flex items-center mt-8 justify-between gap-3">
+				<div className={`w-full flex items-center mt-8 justify-between gap-3 ${variant === 'profilePost' ? "hidden" : "block"}`}>
 					<figure className="w-8 h-8">
 						<img
 							src={userData?.picture}

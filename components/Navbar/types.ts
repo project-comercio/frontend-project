@@ -12,3 +12,8 @@ export interface NavbarProps {
   transparent?: boolean;
   variant?: 'primary' | 'secondary'
 }
+
+export interface NavbarItemProps {
+  variant?: string
+  link: NavbarLinkProps
+}

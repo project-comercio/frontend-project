@@ -1,6 +1,5 @@
 "use client"
 
-import TextEditor from '@/components/Config/TextEditor'
 import TextEditorPopup from '@/components/Config/TextEditorPopup'
 import { getUser } from '@/context/UserContext'
 import React, { useState } from 'react'

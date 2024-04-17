@@ -12,10 +12,10 @@ export default function MainFeed() {
 			"https://backend-repository.onrender.com/posts/",
 			{
 				method: "GET",
-				next: {
-					revalidate: 1 * 60,
-					tags: ['get-all-posts']
-				}
+				// next: {
+				// 	revalidate: 1 * 60,
+				// 	tags: ['get-all-posts']
+				// }
 			},
 		);
 		const response = await requisiton.json();

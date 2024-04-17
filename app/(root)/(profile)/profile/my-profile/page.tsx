@@ -2,10 +2,11 @@ import Navbar from '@/components/Navbar/Navbar'
 import { getMetaData } from '@/utils/getMetaData'
 import React from 'react'
 import Description from '../components/Description'
-import Posts from '../components/Posts'
+
 import Header from '../components/Header'
 import Activity from '../components/Activity'
 import Sidebar from '../../../(feed)/home/components/Sidebar'
+import UserPosts from './UserPosts'
 
 export async function generateMetadata() {
   return getMetaData({
@@ -24,7 +25,7 @@ export default function Page() {
           <div className='w-full flex flex-col gap-4'>
             <Header />
             <Description />
-            <Posts />
+            <UserPosts />
             <Activity />
           </div>
           <Sidebar />

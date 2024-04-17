@@ -9,6 +9,7 @@ import type { CreatePostProps } from "./types";
 import UploadPhoto from "@/components/Config/UploadPhoto";
 import Link from "next/link";
 import { revalidateTag } from "next/cache";
+import Image from "next/image";
 
 export default function CreatePost({ handleGetAllPost }: CreatePostProps) {
 	const { userData } = getUser();
@@ -56,9 +57,11 @@ export default function CreatePost({ handleGetAllPost }: CreatePostProps) {
 			<div className="w-full flex justify-between items-center pt-2 lg:pt-4 gap-2 lg:gap-4">
 				<Link href="/profile">
 					<figure className="w-10 h-10">
-						<img
+						<Image
 							src={userData?.picture}
 							alt="profile-image"
+							width={40}
+							height={40}
 							className="rounded-full w-10 h-10"
 						/>
 					</figure>
@@ -94,7 +97,9 @@ export default function CreatePost({ handleGetAllPost }: CreatePostProps) {
 					<span className="text-xs text-slate-500 mb-2">
 						Preview imagem do post:
 					</span>
-					<img
+					<Image
+						width={300}
+						height={300}
 						src={postImage}
 						className="rounded-lg"
 						alt="post-picture-preview"

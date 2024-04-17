@@ -16,6 +16,7 @@ import ToastMessage from "@/components/Config/ToastMessage";
 export default function RootLayout({
   children,
 }: Readonly<{
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   children: React.ReactNode | any;
 }>) {
   const metadata: Metadata = {

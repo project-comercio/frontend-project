@@ -128,7 +128,7 @@ export default function Home() {
         <motion.section initial="hidden" animate="visible" variants={slideInFromRight(1)}  className="w-full py-12 lg:py-20 flex flex-col items-center">
           <div className="w-full max-w-4xl flex lg:flex-row flex-col items-center lg:items-start justify-between gap-12">
             <figure className="w-full flex-1">
-              <img
+              <Image
                 src="https://media.istockphoto.com/id/1453843862/photo/business-meeting.jpg?s=612x612&w=0&k=20&c=4k9H7agmpn92B7bkUywvkK5Ckwm9Y8f8QrGs4DRDWpE="
                 alt="increase-your-commerce"
                 height={400}
@@ -167,7 +167,7 @@ export default function Home() {
               </p>
             </article>
             <figure className="w-full flex-1">
-              <img
+              <Image
                 src="https://t3.ftcdn.net/jpg/04/23/94/82/240_F_423948206_GUXFvsZauUj8yViPqtPIgvwn2rkGRpuX.jpg"
                 alt="increase-your-commerce"
                 height={400}
