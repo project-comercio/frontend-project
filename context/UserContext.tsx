@@ -40,6 +40,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
 			const response = await requisiton.json();
 			if (response) {
 				setUserData(response);
+				await checkIsNewUser()
 			} else {
 				await createUser();
 			}
@@ -77,6 +78,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
 			if (response.ok) {
 				setUserData(response);
 				router.push("/home");
+				await checkIsNewUser()
 			} else {
 				throw new Error("Houve um erro durante a criação do usuário");
 			}
@@ -85,15 +87,15 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
 		}
 	};
 
-	const redirectUser = async () => {
-		if (userData[0]) {
-			if (path === "/") {
-				router.push("/home");
+	const checkIsNewUser = async () => {
+		if (userData) {
+			if (userData.newUser) {
+				router.push("/finish-profile");
 			} else {
 				return;
 			}
 		} else {
-			router.push("/");
+			return
 		}
 	};
 
