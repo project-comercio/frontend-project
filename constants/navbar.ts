@@ -4,6 +4,10 @@ export const navbarLinks = [
     href: "/home"
   },
   {
+    label: "Academy",
+    href: "/"
+  },
+  {
     label: "Artigos",
     href: "/articles"
   },
@@ -18,9 +22,5 @@ export const navbarLinks = [
   {
     label: "Sobre",
     href: "/about"
-  },
-  {
-    label: "Contatos",
-    href: "/contact"
   }
 ];

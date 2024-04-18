@@ -1,34 +1,41 @@
-"use client"
+"use client";
 
-import { CldUploadButton } from 'next-cloudinary';
-import React from 'react';
+import { CldUploadButton } from "next-cloudinary";
+import type React from "react";
 
 interface UploadPhotoProps {
-  setFile(arg: string): void
-  file: string
-  children: React.ReactNode
-  className?: string
+	setFile(arg: string): void;
+	file: string;
+	children: React.ReactNode;
+	className?: string;
 }
 
-const UploadPhoto = ({ setFile, file, children, className }: UploadPhotoProps) => {
+const UploadPhoto = ({
+	setFile,
+	file,
+	children,
+	className,
+}: UploadPhotoProps) => {
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	const handleUpload = async (e: any) => {
+		try {
+			setFile(e.info.secure_url);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
-  const handleUpload = async (e: any) => {
-    try {
-      setFile(e.info.secure_url)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+	return (
+		<div className={`flex ${className}`}>
+			<CldUploadButton
+				options={{ maxFiles: 1 }}
+				onUpload={handleUpload}
+				uploadPreset="m3k11e7o"
+			>
+				<div className="select-photo-cloudinary">{children}</div>
+			</CldUploadButton>
+		</div>
+	);
+};
 
-  return (
-    <div className={`flex justify-center items-center ${className}`}>
-      <CldUploadButton options={{ maxFiles: 1 }} onUpload={handleUpload} uploadPreset='m3k11e7o'>
-        <div className='select-photo-cloudinary'>
-          {children}
-        </div>
-      </CldUploadButton>
-    </div>
-  )
-}
-
-export default UploadPhoto
+export default UploadPhoto;
