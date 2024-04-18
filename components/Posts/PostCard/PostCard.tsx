@@ -165,7 +165,7 @@ const PostCard = ({ postContent, variant }: { postContent: PostProps, variant?: 
 						/>
 					</figure>
 				) : null}
-				<div className={`w-full flex items-center justify-start gap-4 mt-4 ${variant === 'profilePost' ? "lg:justify-start lg:gap-4" : "lg:justify-around lg:gap-0"}`}>
+				<div className={`w-full flex items-center justify-start gap-4 mt-4 ${variant === 'profilePost' ? "hidden" : "lg:justify-around lg:gap-0"}`}>
 					{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 					<div className="items-center flex gap-3 cursor-pointer" onClick={() => setOpenPostCard(!openPostCard)}>
 						<FaRegComment size={18} className="gray-icon" />

@@ -2,7 +2,6 @@
 
 import { getUser } from "@/context/UserContext";
 import React, { useState } from "react";
-import { IoMdImage } from "react-icons/io";
 import UpdateUserProfile from "./EditUserProfile";
 
 export default function Header() {
@@ -15,7 +14,7 @@ export default function Header() {
 			<div
 				className="rounded-t-lg w-full h-[220px] bg-cover bg-no-repeat bg-center"
 				style={{
-					backgroundImage: `url("https://media.idownloadblog.com/wp-content/uploads/2021/05/macOS-Big-Sur-wallpaper-inspiration-javierocasio-idownloadblog-Waves-Dark-Alt-4K.jpg")`,
+					backgroundImage: `url("${userData?.backgroundImage}")`,
 				}}
 			/>
 			<div className="p-4 lg:p-8 w-full">
@@ -23,9 +22,8 @@ export default function Header() {
 					<img
 						src={userData?.picture}
 						alt={`${userData?.username}-profile-picture`}
-						className="-mt-20 w-full h-full rounded-full transition-all selection:bg-transparent z-10 hover:z-0 cursor-pointer hover:brightness-50 duration-200"
+						className="profile-picture-border -mt-20 w-full h-full rounded-full selection:bg-transparent cursor-pointer"
 					/>
-					<IoMdImage size={28} className="ease absolute white-icon -mt-16" />
 				</figure>
 				<article className="mt-4">
 					<h2 className="text-base lg:text-lg font-semibold items-center flex gap-1">
