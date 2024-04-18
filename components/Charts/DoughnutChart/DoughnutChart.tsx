@@ -12,7 +12,7 @@ import {
   BarElement,
 } from "chart.js";
 import { Chart, Doughnut } from "react-chartjs-2";
-import { DoughnutProps } from "@/types/index";
+import type { DoughnutProps } from "@/types/index";
 
 ChartJS.register(
   CategoryScale,
@@ -24,9 +24,9 @@ ChartJS.register(
   ArcElement
 );
 
-const DoughnutChart = ({ chartData }: DoughnutProps) => {
+const DoughnutChart = ({ chartData, className }: DoughnutProps) => {
   return (
-    <Doughnut className="w-[250px] h-[250px] doughnut-chart" data={chartData} />
+    <Doughnut className={`doughnut-chart ${className}`} data={chartData} />
   );
 };
 

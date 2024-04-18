@@ -9,22 +9,19 @@ export default function MainFeed() {
 
 	const handleGetAllPosts = async () => {
 		const requisiton = await fetch(
-			"https://backend-repository.onrender.com/posts/",
-			{
+			"https://backend-repository.onrender.com/posts/", {
 				method: "GET",
-				// next: {
-				// 	revalidate: 1 * 60,
-				// 	tags: ['get-all-posts']
-				// }
 			},
 		);
 		const response = await requisiton.json();
+		console.log(response)
 		if (response.length) setPosts(response);
 	};
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		handleGetAllPosts()
-	})
+	}, [])
 	
 	return (
 		<div className="w-full flex flex-col gap-4">

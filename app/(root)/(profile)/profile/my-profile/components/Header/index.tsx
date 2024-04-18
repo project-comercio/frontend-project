@@ -39,12 +39,12 @@ export default function Header() {
 						{userData?.followers} seguidores
 					</p>
 					<p className="text-xs text-slate-400 ">
-						Santa Bárbara d'Oeste, SP - Brasil
+						Santa Bárbara d'Oeste, SP - Brasil <span className="text-xs cursor-pointer text-principal font-medium">- Contato</span>
 					</p>
-					<p className="text-xs text-slate-400">
+					{/* <p className="text-xs text-slate-400">
 						<span className="text-slate-500 text-xs">Contact:</span>{" "}
 						{userData?.email}
-					</p>
+					</p> */}
 				</article>
 				<div className="flex gap-4 items-center w-full justify-end mt-4">
 					{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}

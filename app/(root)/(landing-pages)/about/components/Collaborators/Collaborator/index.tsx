@@ -6,7 +6,7 @@ export const Collaborator: React.FC<CollaboratorCardProps> = ({
 	colaborator,
 }) => {
 	return (
-		<div className="bg-white py-8 px-4 w-full border flex flex-col items-center border-slate-200 drop-shadow-md rounded-md">
+		<div className="bg-white h-full py-8 px-4 w-full border flex flex-col items-center border-slate-200 drop-shadow-md rounded-md">
 			<figure className="w-20 h-20 flex items-center justify-center rounded-full">
 				<img
 					className="w-full h-full rounded-full object-cover"
@@ -36,20 +36,20 @@ export const Collaborator: React.FC<CollaboratorCardProps> = ({
 			</div>
 			<div className="mt-6 flex w-full flex-wrap gap-3">
 				{colaborator.github ? (
-          <Link href={colaborator.github} target="_blankF">
-          	<FaGithub
-              size={24}
-              className="cursor-pointer transition-300 transition-all hover:scale-[101%] gray-icon"
-					  />
-          </Link>
+					<Link href={colaborator.github} target="_blankF">
+						<FaGithub
+							size={24}
+							className="cursor-pointer transition-300 transition-all hover:scale-[101%] gray-icon"
+						/>
+					</Link>
 				) : null}
 				{colaborator.linkedin ? (
-          <Link href={colaborator.linkedin} target="_blank">
-            <FaLinkedin
-              size={24}
-              className="cursor-pointer transition-300 transition-all hover:scale-[101%] gray-icon"
-            />
-          </Link>
+					<Link href={colaborator.linkedin} target="_blank">
+						<FaLinkedin
+							size={24}
+							className="cursor-pointer transition-300 transition-all hover:scale-[101%] gray-icon"
+						/>
+					</Link>
 				) : null}
 				{colaborator.instagram ? (
 					<FaInstagram

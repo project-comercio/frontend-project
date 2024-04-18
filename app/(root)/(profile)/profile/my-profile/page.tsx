@@ -7,6 +7,7 @@ import Activity from './components/Activity'
 import Sidebar from '../../../(feed)/home/components/Sidebar'
 import UserPosts from './components/UserPosts'
 import Header from './components/Header'
+import Report from './components/Report'
 
 export async function generateMetadata() {
   return getMetaData({
@@ -24,6 +25,7 @@ export default function Page() {
         <div className='w-full flex justify-between gap-8 max-w-6xl'>
           <div className='w-full flex flex-col gap-4'>
             <Header />
+            <Report />
             <Description />
             <UserPosts />
             <Activity />

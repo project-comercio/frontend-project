@@ -39,10 +39,10 @@ export default function Description() {
     <section className='w-full bg-white rounded-lg border border-slate-200 p-4 lg:p-8'>
       <h2 className='font-semibold text-sm lg:text-base'>Descrição</h2>
       <p className='text-xs text-slate-500'>A sua descrição deve ser algo objetivo e chamativo para demonstrar algo para seu futuro cliente! (só você pode ver essa mensagem)</p>
-      <article className='my-12 w-full flex justify-center items-center'>
+      <article className='my-8 w-full flex justify-center items-center'>
         {userData?.description ? (
           // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-          <p className="w-full text-sm" dangerouslySetInnerHTML={{__html: userData?.description}} />
+          <p className="w-full description" dangerouslySetInnerHTML={{__html: userData?.description}} />
         ) : (
           <p className='max-w-[400px] w-full text-slate-500 text-sm text-center'>Ops... parace que você ainda não possui uma descrição. Porém você pode adicionar clicando no botão abaixo:</p>
         )}

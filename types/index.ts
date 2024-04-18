@@ -27,6 +27,7 @@ export interface ButtonProps {
 export interface DoughnutProps {
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   chartData: any;
+  className?: string
 }
 
 export interface LineChartProps {
