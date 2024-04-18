@@ -27,7 +27,7 @@ export function Socials() {
         <BsYoutube size={20} className="white-icon" />
         <span className="text-white">Youtube</span>
       </div>
-      <div className="flex gap-3 items-center w-full bg-gradient-to-r from-slate-900 to-slate-800 rounded-[3.5px] px-4 py- transition-all duration-300 hover:brightness-125 cursor-pointer">
+      <div className="flex gap-3 items-center w-full bg-gradient-to-r from-slate-900 to-slate-800 rounded-[3.5px] px-4 py-2 transition-all duration-300 hover:brightness-125 cursor-pointer">
         <BsBrowserSafari size={20} className="white-icon" />
         <span className="text-white">Website</span>
       </div>
