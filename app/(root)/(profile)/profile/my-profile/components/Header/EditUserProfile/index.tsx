@@ -22,16 +22,18 @@ export default function UpdateUserProfile({
 	});
 
 	const [newPicture, setNewPicture] = useState<string>(userData?.picture);
-  const [newBackground, setNewBackground] = useState<string>(userData?.backgroundImage)
+	const [newBackground, setNewBackground] = useState<string>(
+		userData?.backgroundImage,
+	);
 
-  useEffect(() => {
-    if (showState) document.body.style.overflow = 'hidden'
-    if (!showState) document.body.style.overflow = 'unset'
+	useEffect(() => {
+		if (showState) document.body.style.overflow = "hidden";
+		if (!showState) document.body.style.overflow = "unset";
 
-    return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [showState])
+		return () => {
+			document.body.style.overflow = "unset";
+		};
+	}, [showState]);
 
 	return showState ? (
 		<Popup
@@ -105,7 +107,7 @@ export default function UpdateUserProfile({
 						</UploadPhoto>
 					</div>
 				</div>
-        <div className="flex gap-4 mt-4 items-center">
+				<div className="flex gap-4 mt-4 items-center">
 					<figure className="h-[65px] w-[65px] cursor-pointer">
 						<Image
 							width={65}

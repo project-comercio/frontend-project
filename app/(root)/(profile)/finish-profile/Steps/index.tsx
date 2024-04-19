@@ -19,7 +19,10 @@ export default function Steps() {
 		cpf: "",
 		cnpj: "",
 		address: "",
-		cellphone: ""
+		cellphone: "",
+		motivation: "",
+		jobTitle: "",
+		marketType: ""
 	});
 
 	const handleInputChange = (fieldName: string, newValue: string) => {
@@ -46,6 +49,7 @@ export default function Steps() {
 			) : null}
 			{currentStep === 3 ? (
 				<ThirdStep
+					data={data}
 					setCurrentStep={setCurrentStep}
 					handleChange={handleInputChange}
 				/>

@@ -39,7 +39,10 @@ export default function Header() {
 						{userData?.followers} seguidores
 					</p>
 					<p className="text-xs text-slate-400 ">
-						Santa Bárbara d'Oeste, SP - Brasil <span className="text-xs cursor-pointer text-principal font-medium">- Contato</span>
+						Santa Bárbara d'Oeste, SP - Brasil{" "}
+						<span className="text-xs cursor-pointer text-principal font-medium">
+							- Contato
+						</span>
 					</p>
 					{/* <p className="text-xs text-slate-400">
 						<span className="text-slate-500 text-xs">Contact:</span>{" "}
@@ -48,7 +51,7 @@ export default function Header() {
 				</article>
 				<div className="flex gap-4 items-center w-full justify-end mt-4">
 					{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-          <div
+					<div
 						className="px-6 py-1 bg-principal rounded-full text-xs text-center text-white cursor-pointer transition-all duration-300 hover:brightness-125"
 						onClick={() => {
 							setShowEditProfile(!showEditProfile);
@@ -59,7 +62,10 @@ export default function Header() {
 				</div>
 			</div>
 
-      <UpdateUserProfile setShowState={setShowEditProfile} showState={showEditProfile} />
+			<UpdateUserProfile
+				setShowState={setShowEditProfile}
+				showState={showEditProfile}
+			/>
 		</section>
 	);
 }

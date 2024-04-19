@@ -16,6 +16,16 @@ export default function SecondStep({
 	const [formatedCPF, setFormatedCpf] = useState<string>("");
 	const [cellphone, setCellphone] = useState<string>("");
 
+	const finishProfileConfig = async () => {
+		try {
+			console.log("finalizado");
+		} catch (error) {
+			throw new Error(
+				"Não foi possível finalizar a edição do perfil do usuário",
+			);
+		}
+	};
+
 	const verifyCPF = async (cpf: string) => {
 		const valid: boolean = await isValidCPF(cpf);
 
@@ -106,7 +116,9 @@ export default function SecondStep({
 							>
 								<option value="">Selecione o tipo da sua conta</option>
 								{NICHOS_MERCADO.map((item: ItemProps, index: number) => (
-									<option value={item.value} key={`${item.label}-${index}`}>{item.label}</option>
+									<option value={item.value} key={`${item.label}-${index}`}>
+										{item.label}
+									</option>
 								))}
 							</select>
 						</div>
@@ -133,6 +145,28 @@ export default function SecondStep({
 					</>
 				) : type === "empresarial" ? (
 					<>
+						<div className="w-full mb-4 lg:mb-8">
+							<label htmlFor="telefone" className="text-lg">
+								Nicho de mercado
+							</label>
+							<p className="text-slate-500 text-xs mb-2 lg:mb-4">
+								Qual é a especialidade do seu comércio?
+							</p>
+							<select
+								className="w-full text-sm outline-none bg-slate-100 rounded-md px-4 py-3 text-slate-500 mt-1"
+								name="marketType"
+								id="marketType"
+								onChange={(e) => handleChange("marketType", e.target.value)}
+								required
+							>
+								<option value="">Selecione o nicho do seu mercado</option>
+								{NICHOS_MERCADO.map((item: ItemProps, index: number) => (
+									<option value={item.value} key={`${item.label}-${index}`}>
+										{item.label}
+									</option>
+								))}
+							</select>
+						</div>
 						<div className="w-full">
 							<label htmlFor="cpf" className="text-lg">
 								CPF
@@ -201,7 +235,7 @@ export default function SecondStep({
 				<div className="w-full flex items-center justify-center">
 					{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 					<div
-						className="w-full bg-principal text-white px-6 py-3 text-sm rounded-xl text-center mt-4 lg:mt-8 transition-all duration-500 hover:brightness-125 cursor-pointer"
+						className="w-full bg-principal text-white px-6 py-3 text-sm rounded-xl text-center mt-4 lg:mt-8 transition-all duration-500 hover:brightness-110 cursor-pointer"
 						onClick={() => setCurrentStep(3)}
 					>
 						Próxima Etapa
