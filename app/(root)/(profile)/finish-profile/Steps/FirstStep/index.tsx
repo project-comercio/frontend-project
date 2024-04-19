@@ -49,7 +49,7 @@ export default function FirstStep({
 						País <span className="text-principal">*</span>
 					</h3>
 					<select
-						className="w-full outline-none bg-slate-100 rounded-md px-4 py-1 text-slate-500 mt-1"
+						className="w-fulltext-sm  outline-none bg-slate-100 rounded-md px-4 py-3 text-slate-500 mt-1"
 						name="pais"
 						id="pais"
 						onChange={(e) => handleChange("country", e.target.value)}
@@ -64,7 +64,7 @@ export default function FirstStep({
 						Estado / Distrito <span className="text-principal">*</span>
 					</h3>
 					<select
-						className="w-full outline-none bg-slate-100 rounded-md px-4 py-1 text-slate-500 mt-1"
+						className="w-fulltext-sm  outline-none bg-slate-100 rounded-md px-4 py-3 text-slate-500 mt-1"
 						onChange={handleChangeEstado}
 						name="estado"
 						id="estado"
@@ -83,7 +83,7 @@ export default function FirstStep({
 						Cidade <span className="text-principal">*</span>
 					</h3>
 					<select
-						className="w-full outline-none bg-slate-100 rounded-md px-4 py-1 text-slate-500 mt-1"
+						className="w-full text-sm outline-none bg-slate-100 rounded-md px-4 py-3 text-slate-500 mt-1"
 						name="cidade"
 						id="cidade"
 						onChange={(e) => handleChange("city", e.target.value)}
@@ -99,7 +99,7 @@ export default function FirstStep({
 				</div>
 				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 				<div
-					className="w-full bg-principal text-white px-6 py-2 text-sm rounded-xl text-center mt-4 lg:mt-8 transition-all duration-500 hover:brightness-125 cursor-pointer"
+					className="w-full bg-principal text-white px-6 py-3 text-sm rounded-xl text-center mt-4 lg:mt-8 transition-all duration-500 hover:brightness-125 cursor-pointer"
 					onClick={() => setCurrentStep(2)}
 				>
 					Próxima Etapa
