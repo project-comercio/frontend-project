@@ -88,7 +88,11 @@ export default function FirstStep({
 						))}
 					</select>
 				</div>
-				<div className="w-full bg-principal text-white px-6 py-2 text-sm rounded-xl text-center mt-4 lg:mt-8 transition-all duration-500 hover:brightness-125 cursor-pointer">
+				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+				<div
+					className="w-full bg-principal text-white px-6 py-2 text-sm rounded-xl text-center mt-4 lg:mt-8 transition-all duration-500 hover:brightness-125 cursor-pointer"
+					onClick={() => setCurrentStep(2)}
+				>
 					Próxima Etapa
 				</div>
 			</div>
