@@ -14,49 +14,50 @@ import { ApolloContext } from "@/context/ApolloContext";
 import ToastMessage from "@/components/Config/ToastMessage";
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  children: React.ReactNode | any;
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	children: React.ReactNode | any;
 }>) {
-  const metadata: Metadata = {
-    title: "ProjetoIFSP - Página inicial",
-    description: "Expanda a visibilidade da sua marca"
-  };
+	const metadata: Metadata = {
+		title: "ProjetoIFSP - Página inicial",
+		description: "Expanda a visibilidade da sua marca",
+	};
 
-  const path = usePathname();
-  const isPublic = checkIsPublicRoute(path);
+	const path = usePathname();
+	const isPublic = checkIsPublicRoute(path);
 
-  return (
-    <ClerkProvider>
-      <html lang="pt">
-        <body className="selection:bg-[#899edb] selection:text-white">
-          <ApolloContext>
-            <ChakraProvider>
-              <ToastMessage />
-              {isPublic ? (
-                <>
-                  <SignedIn>
-                    {children}
-                    <Footer />
-                  </SignedIn>
-                  <SignedOut>
-                    {children}
-                    <Footer />
-                  </SignedOut>
-                </>
-              ) : (
-                <SignedIn>
-                  <UserProvider>
-                    {children}
-                    <Footer />
-                  </UserProvider>
-                </SignedIn>
-              )}
-            </ChakraProvider>
-          </ApolloContext>
-        </body>
-      </html>
-    </ClerkProvider>
-  );
+	return (
+		<ClerkProvider>
+			<html lang="pt">
+				<body className="selection:bg-[#899edb] selection:text-white">
+					<ApolloContext>
+						<ChakraProvider>
+							<ToastMessage />
+							{isPublic ? (
+								<>
+									<SignedIn>
+										{children}
+										<Footer />
+									</SignedIn>
+									<SignedOut>
+										{children}
+										<Footer />
+									</SignedOut>
+								</>
+							) : (
+								<SignedIn>
+									<UserProvider>
+										<ToastMessage />
+											{children}
+											<Footer />
+									</UserProvider>
+								</SignedIn>
+							)}
+						</ChakraProvider>
+					</ApolloContext>
+				</body>
+			</html>
+		</ClerkProvider>
+	);
 }

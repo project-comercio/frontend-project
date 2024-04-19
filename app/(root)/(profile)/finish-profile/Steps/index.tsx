@@ -15,6 +15,11 @@ export default function Steps() {
 		city: "",
 		state: "",
 		country: "",
+		type: "",
+		cpf: "",
+		cnpj: "",
+		address: "",
+		cellphone: ""
 	});
 
 	const handleInputChange = (fieldName: string, newValue: string) => {
@@ -34,6 +39,7 @@ export default function Steps() {
 			) : null}
 			{currentStep === 2 ? (
 				<SecondStep
+					data={data}
 					setCurrentStep={setCurrentStep}
 					handleChange={handleInputChange}
 				/>
