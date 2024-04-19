@@ -11,3 +11,8 @@ export interface StepWrapperProps {
 		address: string;
 	};
 }
+
+export interface ItemProps {
+  label: string
+  value: string
+}

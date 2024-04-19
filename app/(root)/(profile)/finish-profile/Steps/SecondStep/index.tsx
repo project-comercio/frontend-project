@@ -1,10 +1,11 @@
 import { useState } from "react";
-import type { StepWrapperProps } from "../types";
+import type { ItemProps, StepWrapperProps } from "../types";
 import { isValidCPF } from "@/utils/functions/cpfValidator";
 import { cpfMask } from "@/utils/functions/cpfMask";
 import { toast } from "react-toastify";
 import { CNPJMask } from "@/utils/functions/cnpjMask";
 import { cellphoneMask } from "@/utils/functions/cellphoneMask";
+import { NICHOS_MERCADO } from "@/constants/nichos";
 
 export default function SecondStep({
 	setCurrentStep,
@@ -48,7 +49,9 @@ export default function SecondStep({
 					<label>
 						Tipo da conta <span className="text-principal">*</span>
 					</label>
-					<p className="text-slate-500 text-xs mb-2 lg:mb-4">É possível alterar o tipo da sua conta futuramente:</p>
+					<p className="text-slate-500 text-xs mb-2 lg:mb-4">
+						É possível alterar o tipo da sua conta futuramente:
+					</p>
 					<select
 						className="w-full text-sm outline-none bg-slate-100 rounded-md px-4 py-3 text-slate-500 mt-1"
 						name="accountType"
@@ -66,24 +69,65 @@ export default function SecondStep({
 				</div>
 				{type === "pessoal" ? (
 					<>
-						<div className="w-full">
+						<div className="w-full mb-4 lg:mb-8">
 							<label htmlFor="telefone" className="text-lg">
 								Número do Celular
 							</label>
-							<p className="text-slate-500 text-xs mb-2 lg:mb-4">Insira seu número de celular com o DDD abaixo:</p>
+							<p className="text-slate-500 text-xs mb-2 lg:mb-4">
+								Insira seu número de celular com o DDD abaixo:
+							</p>
 							<input
 								type="text"
 								name="telefone"
 								id="telefone"
 								maxLength={15}
 								minLength={11}
-								className="w-full outline-none pl-4 pr-4 pt-2 pb-2 border border-neutral-200 rounded-lg mt-1 text-[#717171] mb-8"
+								className="w-full text-sm outline-none bg-slate-100 rounded-md px-4 py-3 text-slate-500 mt-1"
 								value={cellphone}
 								spellCheck={false}
 								autoComplete="off"
 								placeholder="Qual é o seu número de celular"
 								onChange={(e) => verifyCellphone(e.target.value)}
+							/>
+						</div>
+						<div className="w-full mb-4 lg:mb-8">
+							<label htmlFor="telefone" className="text-lg">
+								Sua Área
+							</label>
+							<p className="text-slate-500 text-xs mb-2 lg:mb-4">
+								Qual é a sua atual / futura área de atuação:
+							</p>
+							<select
+								className="w-full text-sm outline-none bg-slate-100 rounded-md px-4 py-3 text-slate-500 mt-1"
+								name="jobTitle"
+								id="jobTitle"
+								onChange={(e) => handleChange("jobTitle", e.target.value)}
 								required
+							>
+								<option value="">Selecione o tipo da sua conta</option>
+								{NICHOS_MERCADO.map((item: ItemProps, index: number) => (
+									<option value={item.value} key={`${item.label}-${index}`}>{item.label}</option>
+								))}
+							</select>
+						</div>
+						<div className="w-full mb-4 lg:mb-8">
+							<label htmlFor="telefone" className="text-lg">
+								Preferência de conteúdo
+							</label>
+							<p className="text-slate-500 text-xs mb-2 lg:mb-4">
+								O que você deseja consumir na nossa plataforma?:
+							</p>
+							<input
+								type="text"
+								name="motivation"
+								id="motivation"
+								maxLength={15}
+								minLength={11}
+								className="w-full text-sm outline-none bg-slate-100 rounded-md px-4 py-3 text-slate-500 mt-1"
+								spellCheck={false}
+								autoComplete="off"
+								placeholder="O que você deseja consumir na nossa plataforma?"
+								onChange={(e) => handleChange("motivation", e.target.value)}
 							/>
 						</div>
 					</>
@@ -93,7 +137,9 @@ export default function SecondStep({
 							<label htmlFor="cpf" className="text-lg">
 								CPF
 							</label>
-							<p className="text-slate-500 text-xs mb-2 lg:mb-4">Lembre-se que você deve inserir um CPF válido</p>
+							<p className="text-slate-500 text-xs mb-2 lg:mb-4">
+								Lembre-se que você deve inserir um CPF válido
+							</p>
 							<input
 								type="text"
 								name="cpf"
@@ -106,14 +152,15 @@ export default function SecondStep({
 								value={formatedCPF}
 								placeholder="Qual é o CPF do dono do comércio?"
 								onChange={(e) => verifyCPF(e.target.value)}
-								required
 							/>
 						</div>
 						<div className="w-full">
 							<label htmlFor="rg" className="text-lg">
 								CNPJ
 							</label>
-							<p className="text-slate-500 text-xs mb-2 lg:mb-4">Lembre-se que você deve inserir um CNPJ válido</p>
+							<p className="text-slate-500 text-xs mb-2 lg:mb-4">
+								Lembre-se que você deve inserir um CNPJ válido
+							</p>
 							<input
 								type="text"
 								name="cnpj"
@@ -126,27 +173,27 @@ export default function SecondStep({
 								value={data?.cnpj}
 								placeholder="Qual é o RG do dono do comércio?"
 								onChange={(e) => verifyCNPJ(e.target.value)}
-								required
 							/>
 						</div>
 						<div className="w-full mb-4 lg:mb-8">
 							<label htmlFor="telefone" className="text-lg">
 								Número do Celular
 							</label>
-							<p className="text-slate-500 text-xs mb-2 lg:mb-4">Insira seu número de celular com o DDD abaixo:</p>
+							<p className="text-slate-500 text-xs mb-2 lg:mb-4">
+								Insira seu número de celular com o DDD abaixo:
+							</p>
 							<input
 								type="text"
 								name="telefone"
 								id="telefone"
 								maxLength={15}
 								minLength={11}
-								className="w-full outline-none text-sm bg-slate-100 px-4 py-3 text-slate-500 rounded-md mt-1 mb-8"
+								className="w-full outline-none text-sm bg-slate-100 px-4 py-3 text-slate-500 rounded-md mt-1 mb-2"
 								value={cellphone}
 								spellCheck={false}
 								autoComplete="off"
 								placeholder="Qual é o celular do comércio"
 								onChange={(e) => verifyCellphone(e.target.value)}
-								required
 							/>
 						</div>
 					</>

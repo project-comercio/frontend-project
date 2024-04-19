@@ -49,7 +49,7 @@ export default function FirstStep({
 						País <span className="text-principal">*</span>
 					</h3>
 					<select
-						className="w-fulltext-sm  outline-none bg-slate-100 rounded-md px-4 py-3 text-slate-500 mt-1"
+						className="w-full text-sm  outline-none bg-slate-100 rounded-md px-4 py-3 text-slate-500 mt-1"
 						name="pais"
 						id="pais"
 						onChange={(e) => handleChange("country", e.target.value)}
@@ -64,7 +64,7 @@ export default function FirstStep({
 						Estado / Distrito <span className="text-principal">*</span>
 					</h3>
 					<select
-						className="w-fulltext-sm  outline-none bg-slate-100 rounded-md px-4 py-3 text-slate-500 mt-1"
+						className="w-full text-sm  outline-none bg-slate-100 rounded-md px-4 py-3 text-slate-500 mt-1"
 						onChange={handleChangeEstado}
 						name="estado"
 						id="estado"
