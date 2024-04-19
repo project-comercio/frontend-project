@@ -16,8 +16,7 @@ const OpenPostCard = ({
   const getPostsComments = async () => {
 		try {
 			const requisiton = await fetch(
-				`https://backend-repository.onrender.com/comments/findPostComments/${postContent.id}`,
-				{
+				`https://backend-repository.onrender.com/comments/findPostComments/${postContent.id}`, {
 					method: "GET",
 				},
 			);
