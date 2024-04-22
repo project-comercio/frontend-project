@@ -6,7 +6,7 @@ import Feed from './components/Feed'
 
 export async function generateMetadata() {
   return getMetaData({
-    title: "Feed",
+    title: "Feed Inicial - descubra postagens",
     description: "Descubra outras empresas referencias do seu nicho e veja o que está em alta por ai",
     image: ""
   })
