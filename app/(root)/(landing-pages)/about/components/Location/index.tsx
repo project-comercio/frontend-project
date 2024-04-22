@@ -23,7 +23,7 @@ export function Location() {
 					<iframe
 						src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2197.7504010287653!2d-47.4740612794637!3d-22.976717152348854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1713222813424!5m2!1spt-BR!2sbr"
 						width={width >= 1100 ? "600" : "400"}
-						height={width >= 1100 ? "1100" : "220"}
+						height={width >= 1100 ? "475" : "220"}
 						allowFullScreen={false}
 						loading="lazy"
 						referrerPolicy="no-referrer-when-downgrade"

@@ -2,7 +2,7 @@ export const COLLABORATORS = [
 	{
 		imageUrl: "https://uploaddeimagens.com.br/images/004/767/881/original/imagemmuca.jpg?1712717283",
 		name: "Murilo Medina",
-		email: "email.testes@gmail.com",
+		email: "murilo@gmail.com",
 		linkedin: "https://www.linkedin.com/in/murilo-medina-47ba002a9/",
 		github: "https://github.com/medinavs",
 		skills: ['javascript', 'react', 'c', 'java', 'typescript', 'nextjs'],
