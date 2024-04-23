@@ -15,7 +15,7 @@ export default function GroupPage() {
     <>
       <Navbar variant='primary' />
       <main className='lg:px-8 pb-8 px-4 min-h-[62vh] pt-28 bg-[#fafafa] flex flex-col items-center'>
-      teste
+      
       </main>
     </>
   )

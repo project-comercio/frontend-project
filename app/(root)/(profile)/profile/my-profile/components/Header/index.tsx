@@ -44,10 +44,6 @@ export default function Header() {
 							- Contato
 						</span>
 					</p>
-					{/* <p className="text-xs text-slate-400">
-						<span className="text-slate-500 text-xs">Contact:</span>{" "}
-						{userData?.email}
-					</p> */}
 				</article>
 				<div className="flex gap-4 items-center w-full justify-end mt-4">
 					{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
