@@ -48,7 +48,6 @@ export default function Description() {
 				{userData?.description ? (
 					<p
 						className="w-full description"
-						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 						dangerouslySetInnerHTML={{ __html: userData?.description }}
 					/>
 				) : (

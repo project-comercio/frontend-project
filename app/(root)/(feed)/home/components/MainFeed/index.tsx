@@ -18,7 +18,6 @@ export default function MainFeed() {
 		if (response.length) setPosts(response);
 	};
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		handleGetAllPosts()
 	}, [])

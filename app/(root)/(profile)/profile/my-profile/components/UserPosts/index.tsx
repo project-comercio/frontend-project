@@ -31,7 +31,6 @@ export default function UserPosts() {
 		}
 	};
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		if (userData?.id !== undefined && userData?.id !== null) {
 			getAllUserPosts(userData?.id);

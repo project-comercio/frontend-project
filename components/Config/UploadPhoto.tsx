@@ -16,7 +16,6 @@ const UploadPhoto = ({
 	children,
 	className,
 }: UploadPhotoProps) => {
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	const handleUpload = async (e: any) => {
 		try {
 			setFile(e.info.secure_url);

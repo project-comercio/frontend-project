@@ -19,7 +19,6 @@ export function Location() {
 
 			<section className="mt-12 w-full lg:flex-row flex-col-reverse flex justify-between gap-4 max-w-7xl bg-white border-slate-200 border rounded-md drop-shadow-md p-4">
 				<figure className="w-full lg:mt-0 mt-4 flex-1 justify-center flex items-center">
-					{/* biome-ignore lint/a11y/useIframeTitle: <explanation> */}
 					<iframe
 						src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2197.7504010287653!2d-47.4740612794637!3d-22.976717152348854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1713222813424!5m2!1spt-BR!2sbr"
 						width={width >= 1100 ? "600" : "400"}

@@ -22,7 +22,6 @@ export default function Topics() {
     }
   }
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
       getAllTopics()
   }, [])

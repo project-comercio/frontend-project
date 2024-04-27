@@ -1,7 +1,6 @@
 import type { InputFieldProps } from "./types";
 
 export default function InitialInputField({ label, value, onChange, placeholder }: InputFieldProps) {
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	const handleChange = (e: { target: { value: any; }; }) => {
 		onChange(e.target.value);
 	};

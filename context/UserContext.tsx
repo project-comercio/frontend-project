@@ -107,12 +107,10 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
 		await getUserInfo();
 	};
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		getSession();
 	}, []);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		getInfo();
 	}, [cookiesData]);

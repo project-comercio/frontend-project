@@ -24,7 +24,6 @@ export default function ThirdStep({
 					completamente na nossa plataforma, faça muitas conexões e impulsione
 					seu comércio
 				</p>
-				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 				<div
 					className="w-full bg-principal text-white px-6 py-3 text-sm rounded-xl text-center mt-4 lg:mt-8 transition-all duration-500 hover:brightness-110 cursor-pointer"
 					onClick={() => router.push("/home")}

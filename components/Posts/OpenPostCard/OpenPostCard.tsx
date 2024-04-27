@@ -27,7 +27,6 @@ const OpenPostCard = ({
 		}
 	};
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     getPostsComments()
   }, [])

@@ -26,7 +26,6 @@ export const Collaborator: React.FC<CollaboratorCardProps> = ({
 					<span
 						className="bg-blue-100 text-blue-600 rounded-full px-4 py-1 text-center text-[10px]"
 						key={`${skill}-${
-							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 							index
 						}`}
 					>

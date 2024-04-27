@@ -233,7 +233,6 @@ export default function SecondStep({
 					</>
 				) : null}
 				<div className="w-full flex items-center justify-center">
-					{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 					<div
 						className="w-full bg-principal text-white px-6 py-3 text-sm rounded-xl text-center mt-4 lg:mt-8 transition-all duration-500 hover:brightness-110 cursor-pointer"
 						onClick={() => setCurrentStep(3)}

@@ -47,7 +47,6 @@ export default function Sidebar() {
 		}
 	};
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		handleGetAllUsers();
 	}, []);

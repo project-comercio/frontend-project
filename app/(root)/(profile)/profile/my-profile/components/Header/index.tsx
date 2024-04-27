@@ -50,7 +50,6 @@ export default function Header() {
 					</p> */}
 				</article>
 				<div className="flex gap-4 items-center w-full justify-end mt-4">
-					{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 					<div
 						className="px-6 py-1 bg-principal rounded-full text-xs text-center text-white cursor-pointer transition-all duration-300 hover:brightness-125"
 						onClick={() => {

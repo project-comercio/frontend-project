@@ -27,7 +27,6 @@ const PostCard = ({
 
 	const [openPostCard, setOpenPostCard] = useState<boolean>(false);
 
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	const [postLikes, setPostsLikes] = useState<number | any>(postContent.likes);
 	const [isLiked, setIsLiked] = useState<boolean>(
 		userData?.likes.includes(postContent.id),
@@ -130,7 +129,6 @@ const PostCard = ({
 		}
 	};
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		getPostsComments();
 	}, []);
@@ -157,7 +155,6 @@ const PostCard = ({
 							<IoEllipsisHorizontalSharp size={20} className="gray-icon" />
 						</div>
 					</div>
-					{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 					<article
 						className="mt-6"
 						onClick={() => setOpenPostCard(!openPostCard)}
@@ -166,7 +163,6 @@ const PostCard = ({
 					</article>
 				</div>
 				{postContent.images[0] !== "" ? (
-					// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 					<figure
 						className="cursor-pointer w-full h-[350px] group relative block overflow-hidden"
 						onClick={() => setOpenPostCard(!openPostCard)}
@@ -186,7 +182,6 @@ const PostCard = ({
 								: "lg:justify-around lg:gap-0"
 						}`}
 					>
-						{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 						<div
 							className="items-center flex gap-3 cursor-pointer"
 							onClick={() => setOpenPostCard(!openPostCard)}

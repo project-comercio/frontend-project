@@ -25,22 +25,17 @@ export interface ButtonProps {
 }
 
 export interface DoughnutProps {
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   chartData: any;
   className?: string
 }
 
 export interface LineChartProps {
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   chartData: any;
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   chartOptions: any;
 }
 
 export interface RadarChartProps {
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   chartData: any;
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   chartOptions: any;
 }
 
@@ -117,7 +112,6 @@ export interface PostProps {
 }
 
 export interface UserContextProps {
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   cookiesData: any,
   getSessionInfo(): void,
   userData: UserProps,

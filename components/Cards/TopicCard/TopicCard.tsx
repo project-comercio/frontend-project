@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 
 const TopicCard = ({ topic }: { topic: TopicProps }) => {
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   const pagesImages: any = {
     endeavor:
       "https://20anos.endeavor.org.br/wp-content/uploads/2020/10/Logo_black-1.png",

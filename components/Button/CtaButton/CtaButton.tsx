@@ -5,7 +5,6 @@ const CtaButton = ({label, href} : CtaButtonProps) => {
   return (
     <button type="button" className="cta">
       <span>{label}</span>
-      {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
         <svg width="15px" height="10px" viewBox="0 0 13 10">
         <path d="M1,5 L11,5" />
         <polyline points="8 1 12 5 8 9" />
