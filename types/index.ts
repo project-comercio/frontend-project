@@ -1,7 +1,7 @@
-import type { Params } from "next/dist/shared/lib/router/utils/route-matcher";
-import type { FunctionComponent } from "react";
-import type { SwiperRef, SwiperSlideProps } from "swiper/react";
-import type { SwiperModule } from "swiper/types";
+import type { Params } from 'next/dist/shared/lib/router/utils/route-matcher'
+import type { FunctionComponent } from 'react'
+import type { SwiperRef, SwiperSlideProps } from 'swiper/react'
+import type { SwiperModule } from 'swiper/types'
 
 export interface getInterface {
   request?: Request
@@ -10,92 +10,92 @@ export interface getInterface {
 
 export interface ImageProps {
   image: {
-    src: string;
-    url: string;
-    width?: number;
-    height?: number;
-  };
+    src: string
+    url: string
+    width?: number
+    height?: number
+  }
 }
 
 export interface ButtonProps {
   button: {
-    label: string;
-    url: string;
-  };
+    label: string
+    url: string
+  }
 }
 
 export interface DoughnutProps {
-  chartData: any;
+  chartData: any
   className?: string
 }
 
 export interface LineChartProps {
-  chartData: any;
-  chartOptions: any;
+  chartData: any
+  chartOptions: any
 }
 
 export interface RadarChartProps {
-  chartData: any;
-  chartOptions: any;
+  chartData: any
+  chartOptions: any
 }
 
 export interface PopupProps {
-  children: React.ReactNode;
-  title: string;
-  description?: string;
-  showState: boolean;
-  setShowState(arg: boolean): void;
-  handleSubmit?: () => void;
+  children: React.ReactNode
+  title: string
+  description?: string
+  showState: boolean
+  setShowState(arg: boolean): void
+  handleSubmit?: () => void
 }
 
 export interface TopicProps {
-  page: string;
-  image: string;
-  title: string;
-  description: string;
-  url: string;
+  page: string
+  image: string
+  title: string
+  description: string
+  url: string
 }
 
 export interface MarketingCourseProps {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
+  id: number
+  title: string
+  description: string
+  price: number
 }
 
 export interface UserProps {
-  id: string;
-  uuid: string;
-  email: string;
-  password: string;
-  firstname: string;
-  lastname: string;
-  username: string;
-  followers: number;
-  following: number;
-  picture: string;
-  backgroundImage: string;
-  likes: string[];
-  viewTrending: boolean;
+  id: string
+  uuid: string
+  email: string
+  password: string
+  firstname: string
+  lastname: string
+  username: string
+  followers: number
+  following: number
+  picture: string
+  backgroundImage: string
+  likes: string[]
+  viewTrending: boolean
 }
 
 export interface AnchorProps {
-  href: string;
-  label: string;
+  href: string
+  label: string
 }
 
 export interface DateProps {
-  days: string;
-  hours: string;
-  minutes: string;
-  seconds: string;
+  days: string
+  hours: string
+  minutes: string
+  seconds: string
 }
 
 export interface SwiperProps {
-  Swiper: FunctionComponent<React.RefAttributes<SwiperRef> & SwiperProps>;
-  SwiperSlide: FunctionComponent<SwiperSlideProps>;
-  Navigation: SwiperModule;
-  Pagination: SwiperModule;
+  Swiper: FunctionComponent<React.RefAttributes<SwiperRef> & SwiperProps>
+  SwiperSlide: FunctionComponent<SwiperSlideProps>
+  Navigation: SwiperModule
+  Pagination: SwiperModule
 }
 
 export interface PostProps {
@@ -112,9 +112,9 @@ export interface PostProps {
 }
 
 export interface UserContextProps {
-  cookiesData: any,
-  getSessionInfo(): void,
-  userData: UserProps,
+  cookiesData: any
+  getSessionInfo(): void
+  userData: UserProps
   getUserInfo(): void
 }
 

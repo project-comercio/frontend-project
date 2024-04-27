@@ -1,23 +1,23 @@
-import React from "react";
-import Topics from "./components/Topics";
-import Navbar from "@/components/Navbar/Navbar";
-import { getMetaData } from "@/utils/getMetaData";
+import React from 'react'
+import Topics from './components/Topics'
+import Navbar from '@/components/Navbar/Navbar'
+import { getMetaData } from '@/utils/getMetaData'
 
 export async function generateMetadata() {
   return getMetaData({
-    title: "Em alta",
-    description: "Descrição",
-    image: ""
+    title: 'Trending Topics',
+    description: 'Veja o que está em alta dentro do seu nicho empresarial!',
+    image: ''
   })
 }
 
 export default function Page() {
   return (
     <>
-      <Navbar variant='primary' />
-      <main className="lg:px-12 px-4 min-h-[62vh] pt-20">
+      <Navbar variant="primary" />
+      <main className="min-h-[62vh] px-4 pt-20 lg:px-12">
         <Topics />
       </main>
     </>
-  );
-};
+  )
+}
