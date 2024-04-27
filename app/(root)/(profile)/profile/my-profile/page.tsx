@@ -11,19 +11,19 @@ import Report from './components/Report'
 
 export async function generateMetadata() {
   return getMetaData({
-    title: "Perfil do usuário",
-    description: "Descrição",
-    image: ""
+    title: 'Perfil principal do usuáro',
+    description: 'Adicione informacões relevantes sobre você e o seu comércio',
+    image: ''
   })
 }
 
 export default function Page() {
   return (
     <>
-      <Navbar variant='primary' />
-      <main className='lg:px-8 pb-8 px-4 min-h-[62vh] pt-28 bg-[#fafafa] flex flex-col items-center'>
-        <div className='w-full flex justify-between gap-8 max-w-6xl'>
-          <div className='w-full flex flex-col gap-4'>
+      <Navbar variant="primary" />
+      <main className="flex min-h-[62vh] flex-col items-center bg-[#fafafa] px-4 pb-8 pt-28 lg:px-8">
+        <div className="flex w-full max-w-6xl justify-between gap-8">
+          <div className="flex w-full flex-col gap-4">
             <Header />
             <Report />
             <Description />

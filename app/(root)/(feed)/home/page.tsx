@@ -6,17 +6,18 @@ import Feed from './components/Feed'
 
 export async function generateMetadata() {
   return getMetaData({
-    title: "Feed",
-    description: "Descubra outras empresas referencias do seu nicho e veja o que está em alta por ai",
-    image: ""
+    title: 'Feed Inicial - Postagens',
+    description:
+      'Descubra outras empresas referencias do seu nicho e veja o que está em alta por ai',
+    image: ''
   })
 }
 
 export default function Page() {
   return (
     <>
-      <Navbar variant='primary' />
-      <main className="lg:px-8 pb-8 px-4 min-h-[62vh] pt-28 bg-[#fafafa] flex flex-col items-center">
+      <Navbar variant="primary" />
+      <main className="flex min-h-[62vh] flex-col items-center bg-[#fafafa] px-4 pb-8 pt-28 lg:px-8">
         <Feed />
       </main>
     </>
