@@ -1,6 +1,6 @@
 "use client";
 
-import Loader from "@/components/Config/Loader";
+import Loader from "@/components/common/Config/Loader";
 import type { UserContextProps, UserProps } from "@/types";
 import { checkIsPublicRoute } from "@/utils/auth/check-route";
 import { generateHashPassword } from "@/utils/auth/generateHashPassword";

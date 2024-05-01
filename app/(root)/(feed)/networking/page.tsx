@@ -1,4 +1,5 @@
-import Navbar from "@/components/Navbar/Navbar";
+
+import Navbar from "@/components/toolkit/Navbar/Navbar";
 import { getMetaData } from "@/utils/getMetaData";
 
 export async function generateMetadata() {
