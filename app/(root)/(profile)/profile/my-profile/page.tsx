@@ -11,7 +11,7 @@ import Report from './components/Report'
 
 export async function generateMetadata() {
   return getMetaData({
-    title: 'Perfil principal do usuáro',
+    title: 'Perfil principal do usuário',
     description: 'Adicione informacões relevantes sobre você e o seu comércio',
     image: ''
   })
