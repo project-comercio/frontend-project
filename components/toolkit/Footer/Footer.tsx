@@ -1,16 +1,7 @@
 import { footerLinks } from "@/constants/footer";
 import Link from "next/link";
 import React from "react";
-
-interface FooterLinkProps {
-  title: string;
-  links: LinkProps[];
-}
-
-interface LinkProps {
-  label: string;
-  href: string;
-}
+import { FooterData, FooterLink } from "./types";
 
 const Footer = () => {
   return (
@@ -27,7 +18,7 @@ const Footer = () => {
           <p className="text-xs text-slate-500">Se torne referência no seu nicho</p>
         </div>
         <div className="w-full flex gap-6 flex-wrap sm:flex-nowrap mt-16 sm:mt-0">
-          {footerLinks.map((link: FooterLinkProps, index: number) => (
+          {footerLinks.map((link: FooterData, index: number) => (
             <div
               key={`${link.title}-${index}`}
               className="w-full flex flex-col gap-6 text-base min-w-[170px] justify-center items-center sm:justify-normal sm:items-start"
@@ -35,7 +26,7 @@ const Footer = () => {
               <span className="font-semibold text-xl">
                 {link.title}
               </span>
-              {link.links.map((link: LinkProps, index: number) => (
+              {link.links.map((link: FooterLink, index: number) => (
                 <Link
                   key={`${link.label}-${index}`}
                   href={link.href}

@@ -1,7 +1,6 @@
 "use client";
 
-
-import MiniLoader from "@/components/common/Config/MiniLoader";
+import MiniLoader from "@/components/toolkit/Config/MiniLoader";
 import PostCard from "@/components/common/Posts/PostCard/PostCard";
 import { getUser } from "@/context/UserContext";
 import type { PostProps } from "@/types";

@@ -1,7 +1,6 @@
 import React from 'react'
-import Popup from '../Popups/BasePopup'
 import TextEditor from './TextEditor'
-
+import Popup from '../Popups/BasePopup'
 interface TextEditorPopupProps {
   value: string
   setValue(arg: string): void

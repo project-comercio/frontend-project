@@ -1,6 +1,5 @@
 "use client";
 
-
 import SidebarArticle from "@/components/common/Article/SidebarArticle/SidebarArticle";
 import CtaButton from "@/components/common/Button/CtaButton/CtaButton";
 import { COMPANIES_DATA } from "@/constants/companies-data";

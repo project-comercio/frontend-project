@@ -6,11 +6,10 @@ import { CiImageOn } from "react-icons/ci";
 import { IoIosSend } from "react-icons/io";
 import { toast } from "react-toastify";
 import type { CreatePostProps } from "./types";
-
+import UploadPhoto from "@/components/toolkit/Config/UploadPhoto";
 import Link from "next/link";
 import { revalidateTag } from "next/cache";
 import Image from "next/image";
-import UploadPhoto from "@/components/common/Config/UploadPhoto";
 
 export default function CreatePost({ handleGetAllPost }: CreatePostProps) {
 	const { userData } = getUser();

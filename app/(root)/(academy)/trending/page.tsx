@@ -2,10 +2,6 @@ import React from "react";
 import Topics from "./components/Topics";
 import { getMetaData } from "@/utils/getMetaData";
 import Navbar from "@/components/toolkit/Navbar/Navbar";
-import React from 'react'
-import Topics from './components/Topics'
-import Navbar from '@/components/Navbar/Navbar'
-import { getMetaData } from '@/utils/getMetaData'
 
 export async function generateMetadata() {
   return getMetaData({

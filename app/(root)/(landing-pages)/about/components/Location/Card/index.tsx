@@ -11,7 +11,7 @@ export function CardItem({ index, title, description }: CardProps) {
 	];
 
 	return (
-		<div className="flex flex-col">
+		<article className="flex flex-col">
 			<div className="flex gap-3 items-center w-full">
 				<figure>{icons[index]}</figure>
 				<span className=" font-medium">Tenha um marketing acertivo</span>
@@ -23,6 +23,6 @@ export function CardItem({ index, title, description }: CardProps) {
 				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio
 				iure qui, fugiat vitae
 			</p>
-		</div>
+		</article>
 	);
 }

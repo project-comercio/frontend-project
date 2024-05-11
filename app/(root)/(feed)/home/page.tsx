@@ -3,6 +3,7 @@ import React from 'react'
 
 import { getMetaData } from '@/utils/getMetaData'
 import Feed from './components/Feed'
+import { NextPage } from 'next'
 import Navbar from '@/components/toolkit/Navbar/Navbar'
 
 export async function generateMetadata() {
@@ -14,7 +15,7 @@ export async function generateMetadata() {
   })
 }
 
-export default function Page() {
+const Page: NextPage = () => {
   return (
     <>
       <Navbar variant="primary" />
@@ -24,3 +25,5 @@ export default function Page() {
     </>
   )
 }
+
+export default Page

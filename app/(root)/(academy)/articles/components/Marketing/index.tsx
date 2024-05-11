@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import type { MarketingCourseProps } from "@/types";
 import CourseCard from "@/components/common/Cards/CourseCard/CourseCard";
-import Loader from "@/components/common/Config/Loader";
+import Loader from "@/components/toolkit/Config/Loader";
 
 
 export default function Marketing() {

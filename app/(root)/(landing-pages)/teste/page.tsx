@@ -1,9 +1,8 @@
-
 import { getMetaData } from '@/utils/getMetaData'
 import React from 'react'
-import Header from './components/Header'
 import { NextPage } from 'next'
 import Navbar from '@/components/toolkit/Navbar/Navbar'
+import { DevelopmentDisclaimer } from '@/components/common/DevelopmentDisclaimer'
 
 export async function generateMetadata() {
   return getMetaData({
@@ -18,7 +17,7 @@ const Page: NextPage = () => {
     <>
       <Navbar variant="secondary" />
       <main className="min-h-[62vh] pt-16">
-        <Header />
+        <DevelopmentDisclaimer />
       </main>
     </>
   )

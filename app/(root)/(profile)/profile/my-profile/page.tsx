@@ -1,4 +1,4 @@
-import Navbar from '@/components/Navbar/Navbar'
+import Navbar from '@/components/toolkit/Navbar/Navbar'
 import { getMetaData } from '@/utils/getMetaData'
 import React from 'react'
 import Description from './components/Description'
@@ -8,6 +8,7 @@ import Sidebar from '../../../(feed)/home/components/Sidebar'
 import UserPosts from './components/UserPosts'
 import Header from './components/Header'
 import Report from './components/Report'
+import { NextPage } from 'next'
 
 export async function generateMetadata() {
   return getMetaData({
@@ -17,7 +18,7 @@ export async function generateMetadata() {
   })
 }
 
-export default function Page() {
+const Page: NextPage = () => {
   return (
     <>
       <Navbar variant="primary" />
@@ -36,3 +37,5 @@ export default function Page() {
     </>
   )
 }
+
+export default Page

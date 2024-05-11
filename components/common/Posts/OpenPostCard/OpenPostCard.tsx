@@ -1,10 +1,11 @@
-import PostPopup from "@/components/Popups/PostPopup";
+
 import type { CommentProps, PostProps } from "@/types";
 import React, { useEffect, useState } from "react";
 import { FaRegComment } from "react-icons/fa";
 import { FaRegShareFromSquare } from "react-icons/fa6";
 import Comment from "./Comment/Comment";
 import type { OpenPostCardProps } from "./types";
+import PostPopup from "@/components/toolkit/Popups/PostPopup";
 
 const OpenPostCard = ({
 	showState,
@@ -12,7 +13,7 @@ const OpenPostCard = ({
 	postContent,
 }: OpenPostCardProps) => {
   const [postComments, setPostComments] = useState<CommentProps[]>([])
-	
+
   const getPostsComments = async () => {
 		try {
 			const requisiton = await fetch(
