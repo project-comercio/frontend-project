@@ -5,6 +5,8 @@ import { PrivateRouteProvider } from "@/context/PrivateRouteContext";
 import { ChakraProvider } from "@chakra-ui/react";
 import { getMetaData } from "@/utils/getMetaData";
 import "../../styles/globals.scss";
+import { RootLayoutProps } from "./types";
+import React from "react";
 
 export async function generateMetadata() {
   return getMetaData({
@@ -15,14 +17,12 @@ export async function generateMetadata() {
   })
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+const RootLayout: React.FC<RootLayoutProps> = ({
+  children, params: {locale}
+}) => {
   return (
     <ClerkProvider>
-      <html lang="pt">
+      <html lang={locale}>
         <body className="overflow-x-hidden text-slate-700 selection:bg-[#899edb] selection:text-white">
           <ApolloContext>
             <ChakraProvider>
@@ -37,3 +37,5 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
+
+export default RootLayout

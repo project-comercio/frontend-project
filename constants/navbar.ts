@@ -1,11 +1,11 @@
-export const navbarLinks = [
+export const NAVBAR_LINKS = [
   {
     label: "Home",
     href: "/home"
   },
   {
     label: "Academy",
-    href: "/"
+    href: "/academy"
   },
   {
     label: "Artigos",

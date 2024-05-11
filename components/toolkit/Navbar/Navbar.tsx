@@ -1,12 +1,12 @@
 "use client";
 
-import { navbarLinks } from "@/constants/navbar";
+import { NAVBAR_LINKS } from "@/constants/navbar";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import React, { useState } from "react";
 import { IoMenuOutline } from "react-icons/io5";
 import MiniNavbar from "./MiniNavbar";
-import type { NavbarLinkProps, NavbarProps } from "./types";
+import type { NavbarLink, NavbarProps } from "./types";
 import NavbarItem from "./NavbarItem";
 
 const Navbar = ({ transparent, variant }: NavbarProps) => {
@@ -37,7 +37,7 @@ const Navbar = ({ transparent, variant }: NavbarProps) => {
 				</Link>
 				<div className="w-full lg:flex hidden">
 					<ul className="flex w-full justify-around gap-6">
-						{navbarLinks.map((link: NavbarLinkProps, index: number) => (
+						{NAVBAR_LINKS.map((link: NavbarLink, index: number) => (
               <NavbarItem link={link} variant={variant} key={`${link.label}-${index}`} />
 						))}
 					</ul>
@@ -66,7 +66,7 @@ const Navbar = ({ transparent, variant }: NavbarProps) => {
 							<Link href={"/sign-up"}>
 								<button
 									type="button"
-									className="ease-in-out bg-principal transition-all duration-300 hover:brightness-110 text-white rounded-3xl px-8 py-1"
+									className="ease-in-out text-sm bg-gradient-to-tr from-blue-700 to-blue-500 transition-all duration-300 hover:brightness-110 text-white rounded-md px-12 py-2"
 								>
 									Cadastrar
 								</button>

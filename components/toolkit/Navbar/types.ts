@@ -3,7 +3,7 @@ export interface MiniNavbarProps {
   setShowMenu(arg: boolean): void
 }
 
-export interface NavbarLinkProps {
+export interface NavbarLink {
   label: string;
   href: string;
 }
@@ -15,5 +15,5 @@ export interface NavbarProps {
 
 export interface NavbarItemProps {
   variant?: string
-  link: NavbarLinkProps
+  link: NavbarLink
 }
