@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from "react";
 import type { ItemProps, StepWrapperProps } from "../types";
 import { isValidCPF } from "@/utils/functions/cpfValidator";
@@ -6,19 +8,57 @@ import { toast } from "react-toastify";
 import { CNPJMask } from "@/utils/functions/cnpjMask";
 import { cellphoneMask } from "@/utils/functions/cellphoneMask";
 import { NICHOS_MERCADO } from "@/constants/nichos";
+import { getUser } from "@/context/UserContext";
+import { useRouter } from "next/navigation";
 
 export default function SecondStep({
 	setCurrentStep,
 	handleChange,
 	data,
 }: StepWrapperProps) {
+	const { userData, getUserInfo } = getUser()
+
+	const router = useRouter()
+
 	const [type, setType] = useState<string>("undefined");
 	const [formatedCPF, setFormatedCpf] = useState<string>("");
 	const [cellphone, setCellphone] = useState<string>("");
 
 	const finishProfileConfig = async () => {
 		try {
-			console.log("finalizado");
+			if (data?.type === 'empresarial') {
+				const response = await fetch(
+					"https://backend-repository.onrender.com/companies/",
+					{
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify({
+							ownerId: userData?.id,
+							ownerName: userData?.firstname,
+							city: data?.city,
+							country: data?.country,
+							state: data?.state,
+							companyField: data?.companyField,
+							address: data?.address,
+							telephone: data?.telephone,
+							cpnj: data?.cnpj,
+							cpf: data?.cpf
+						}),
+					},
+				);
+
+				if (response.ok) {
+					await getUserInfo()
+					setCurrentStep(3)
+				} else {
+					router.push("/finish-profile")
+					toast.error("Não foi possível finalizar a configuração da sua conta!")
+				}
+			} else {
+
+			}
 		} catch (error) {
 			throw new Error(
 				"Não foi possível finalizar a edição do perfil do usuário",
@@ -44,7 +84,7 @@ export default function SecondStep({
 	const verifyCellphone = async (value: string) => {
 		const formatedCellphone: string = await cellphoneMask(value);
 		setCellphone(formatedCellphone);
-		handleChange("cellphone", formatedCellphone);
+		handleChange("telephone", formatedCellphone);
 	};
 
 	const verifyCNPJ = async (value: string) => {
@@ -111,7 +151,7 @@ export default function SecondStep({
 								className="w-full text-sm outline-none bg-slate-100 rounded-md px-4 py-3 text-slate-500 mt-1"
 								name="jobTitle"
 								id="jobTitle"
-								onChange={(e) => handleChange("jobTitle", e.target.value)}
+								onChange={(e) => handleChange("workField", e.target.value)}
 								required
 							>
 								<option value="">Selecione o tipo da sua conta</option>
@@ -139,7 +179,7 @@ export default function SecondStep({
 								spellCheck={false}
 								autoComplete="off"
 								placeholder="O que você deseja consumir na nossa plataforma?"
-								onChange={(e) => handleChange("motivation", e.target.value)}
+								onChange={(e) => handleChange("preferences", e.target.value)}
 							/>
 						</div>
 					</>
@@ -156,7 +196,7 @@ export default function SecondStep({
 								className="w-full text-sm outline-none bg-slate-100 rounded-md px-4 py-3 text-slate-500 mt-1"
 								name="marketType"
 								id="marketType"
-								onChange={(e) => handleChange("marketType", e.target.value)}
+								onChange={(e) => handleChange("companyField", e.target.value)}
 								required
 							>
 								<option value="">Selecione o nicho do seu mercado</option>
@@ -233,12 +273,23 @@ export default function SecondStep({
 					</>
 				) : null}
 				<div className="w-full flex items-center justify-center">
-					<div
-						className="w-full bg-principal text-white px-6 py-3 text-sm rounded-xl text-center mt-4 lg:mt-8 transition-all duration-500 hover:brightness-110 cursor-pointer"
-						onClick={() => setCurrentStep(3)}
-					>
-						Próxima Etapa
-					</div>
+				{
+					type !== undefined ? (
+				<div
+					className="w-full bg-principal text-white px-6 py-3 text-sm rounded-xl text-center mt-4 lg:mt-8 transition-all duration-500 hover:brightness-110 cursor-pointer"
+					onClick={async () => await finishProfileConfig()}
+				>
+					Próxima Etapa
+				</div>
+					) : (
+				<div
+					className="w-full bg-slate-300 text-white px-6 py-3 text-sm rounded-xl text-center mt-4 lg:mt-8 cursor-not-allowed"
+					onClick={() => toast.error("Preencha todos os campos necessários antes de continuar")}
+				>
+					Próxima Etapa
+				</div>
+					)
+				}
 				</div>
 			</div>
 		</div>

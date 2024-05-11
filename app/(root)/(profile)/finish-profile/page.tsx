@@ -1,6 +1,6 @@
 import { getMetaData } from "@/utils/getMetaData";
 import Steps from "./Steps";
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/components/toolkit/Navbar/Navbar";
 
 export async function generateMetadata() {
 	return getMetaData({

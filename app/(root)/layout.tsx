@@ -1,13 +1,9 @@
-
-import { getMetaData } from "@/utils/getMetaData";
-
-import { PrivateRouteProvider } from "@/context/PrivateRouteContext";
 import { ApolloContext } from "@/context/ApolloContext";
-
-import { ClerkProvider } from "@clerk/nextjs";
-import { ChakraProvider } from "@chakra-ui/react";
 import ToastMessage from "@/components/toolkit/Config/ToastMessage";
-
+import { ClerkProvider } from "@clerk/nextjs";
+import { PrivateRouteProvider } from "@/context/PrivateRouteContext";
+import { ChakraProvider } from "@chakra-ui/react";
+import { getMetaData } from "@/utils/getMetaData";
 import "../../styles/globals.scss";
 
 export async function generateMetadata() {

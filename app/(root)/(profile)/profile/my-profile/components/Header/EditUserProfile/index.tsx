@@ -1,11 +1,15 @@
 "use client";
 
-import Popup from "@/components/Popups/BasePopup";
 import type { UpdateUserProfileProps } from "./types";
 import { useEffect, useState } from "react";
 import { getUser } from "@/context/UserContext";
 import Image from "next/image";
+<<<<<<< HEAD
 import UploadPhoto from "@/components/toolkit/Config/UploadPhoto";
+=======
+import Popup from "@/components/toolkit/Popups/BasePopup";
+import UploadPhoto from "@/components/common/Config/UploadPhoto";
+>>>>>>> 1965937343b9f9cade3c56f9f5b114c8194f82a9
 
 export default function UpdateUserProfile({
 	showState,

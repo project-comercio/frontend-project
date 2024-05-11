@@ -9,6 +9,10 @@ export interface StepWrapperProps {
 		cpf: string;
 		cnpj: string;
 		address: string;
+		telephone: string,
+		preferences: string,
+		workField: string,
+		companyField: string
 	};
 }
 
