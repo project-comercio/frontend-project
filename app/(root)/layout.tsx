@@ -8,10 +8,11 @@ import { checkIsPublicRoute } from "@/utils/auth/check-route";
 import { ChakraProvider } from "@chakra-ui/react";
 
 import "../../styles/globals.scss";
-import Footer from "@/components/Footer/Footer";
 import { UserProvider } from "@/context/UserContext";
 import { ApolloContext } from "@/context/ApolloContext";
-import ToastMessage from "@/components/Config/ToastMessage";
+import ToastMessage from "@/components/common/Config/ToastMessage";
+import Footer from "@/components/common/Footer/Footer";
+
 
 export default function RootLayout({
 	children,

@@ -1,8 +1,9 @@
-import Navbar from '@/components/Navbar/Navbar'
+
 import React from 'react'
 
 import { getMetaData } from '@/utils/getMetaData'
 import Feed from './components/Feed'
+import Navbar from '@/components/toolkit/Navbar/Navbar'
 
 export async function generateMetadata() {
   return getMetaData({

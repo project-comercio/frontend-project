@@ -10,8 +10,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import type { MarketingCourseProps } from "@/types";
-import CourseCard from "@/components/Cards/CourseCard/CourseCard";
-import Loader from "@/components/Config/Loader";
+import CourseCard from "@/components/common/Cards/CourseCard/CourseCard";
+import Loader from "@/components/common/Config/Loader";
+
 
 export default function Marketing() {
 	const [data, setData] = useState<MarketingCourseProps[]>([]);

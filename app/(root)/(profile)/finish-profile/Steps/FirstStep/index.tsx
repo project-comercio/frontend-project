@@ -4,6 +4,7 @@ import type React from "react";
 import { useState } from "react";
 import type { StepWrapperProps } from "../types";
 import { CIDADES_BRASIL } from "@/constants/json-cidades";
+import { toast } from "react-toastify";
 
 export default function FirstStep({
 	setCurrentStep,
@@ -97,12 +98,23 @@ export default function FirstStep({
 						))}
 					</select>
 				</div>
+				{
+					data?.city !== "" && data?.country !== "" && data?.state !== "" ? (
 				<div
 					className="w-full bg-principal text-white px-6 py-3 text-sm rounded-xl text-center mt-4 lg:mt-8 transition-all duration-500 hover:brightness-110 cursor-pointer"
 					onClick={() => setCurrentStep(2)}
 				>
 					Próxima Etapa
 				</div>
+					) : (
+				<div
+					className="w-full bg-slate-300 text-white px-6 py-3 text-sm rounded-xl text-center mt-4 lg:mt-8 cursor-not-allowed"
+					onClick={() => toast.error("Preencha todos os campos necessários antes de continuar")}
+				>
+					Próxima Etapa
+				</div>
+					)
+				}
 			</div>
 		</div>
 	);

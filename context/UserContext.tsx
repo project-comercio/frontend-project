@@ -1,5 +1,12 @@
 'use client'
 
+import Loader from "@/components/common/Config/Loader";
+import type { UserContextProps, UserProps } from "@/types";
+import { checkIsPublicRoute } from "@/utils/auth/check-route";
+import { generateHashPassword } from "@/utils/auth/generateHashPassword";
+import { generateRandomName } from "@/utils/functions/getRrandomName";
+import { usePathname, useRouter } from "next/navigation";
+import { createContext, useContext, useEffect, useState } from "react";
 import Loader from '@/components/Config/Loader'
 import type { UserContextProps, UserProps } from '@/types'
 import { checkIsPublicRoute } from '@/utils/auth/check-route'

@@ -1,6 +1,7 @@
 "use client";
 
-import TopicCard from "@/components/Cards/TopicCard/TopicCard";
+
+import TopicCard from "@/components/common/Cards/TopicCard/TopicCard";
 import type { TopicProps } from "@/types";
 import React, { useEffect, useState } from "react";
 

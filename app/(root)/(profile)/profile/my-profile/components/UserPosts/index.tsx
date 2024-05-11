@@ -1,7 +1,8 @@
 "use client";
 
-import MiniLoader from "@/components/Config/MiniLoader";
-import PostCard from "@/components/Posts/PostCard/PostCard";
+
+import MiniLoader from "@/components/common/Config/MiniLoader";
+import PostCard from "@/components/common/Posts/PostCard/PostCard";
 import { getUser } from "@/context/UserContext";
 import type { PostProps } from "@/types";
 import { Suspense, useEffect, useState } from "react";
