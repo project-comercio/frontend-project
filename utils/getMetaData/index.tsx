@@ -19,6 +19,9 @@ export const getMetaData = ({ title, description, image, type = "website" }: Get
       images,
       title,
       description
+    },
+    icons: {
+      icon: '/favicon.ico' 
     }
   }
 }

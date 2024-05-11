@@ -1,6 +1,6 @@
 import { IconProps } from '@/types'
 
-export const MaintainerPro: React.FC<IconProps> = props => (
+export const ProfissionalPro: React.FC<IconProps> = props => (
   <svg
     fill="none"
     viewBox="0 0 144 126"
