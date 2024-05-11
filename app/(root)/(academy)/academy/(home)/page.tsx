@@ -1,11 +1,11 @@
-import { DevelopmentDisclaimer } from "@/components/common/DevelopmentDisclaimer";
 import { getMetaData } from "@/utils/getMetaData";
 import { NextPage } from "next";
 import { Header } from "./components/Header";
 import { DiscoverAcademy } from "./components/DiscoverAcademy";
 import { About } from "./components/About";
-import { Features } from "./components/Features";
 import { OurCommunity } from "./components/OurCommunity";
+import { Achievements } from "./components/Achievements";
+import { Features } from "./components/Features";
 
 export async function generateMetadata() {
   return getMetaData({
@@ -23,6 +23,7 @@ const Page: NextPage = () => {
       <About />
       <OurCommunity />
       <Features />
+      <Achievements />
     </main>
   )
 }
