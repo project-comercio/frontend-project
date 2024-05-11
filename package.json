@@ -50,6 +50,7 @@
     "swiper": "^11.1.0",
     "three": "^0.163.0",
     "tinymce": "^7.0.0",
+    "tricons": "^0.0.24",
     "yarn": "^1.22.22"
   },
   "devDependencies": {

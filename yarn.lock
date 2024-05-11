@@ -7060,6 +7060,11 @@ tough-cookie@~2.3.0:
   dependencies:
     punycode "^1.4.1"
 
+tricons@^0.0.24:
+  version "0.0.24"
+  resolved "https://registry.yarnpkg.com/tricons/-/tricons-0.0.24.tgz#db0cfe4c7a959b6d76ac09cfc68eac0f7dd6aa53"
+  integrity sha512-lRAhbvRO9BM2+Kou+m5YIRQAXvze8Oe5b+/WVbirkK4WCNXKp5WqvdUPPOZ2VVhgeSUAztaShULz4mmdx/6ejQ==
+
 troika-three-text@^0.49.0:
   version "0.49.0"
   resolved "https://registry.npmjs.org/troika-three-text/-/troika-three-text-0.49.0.tgz"

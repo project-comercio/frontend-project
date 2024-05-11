@@ -3,30 +3,8 @@
 import { userTabLinks } from "@/constants/user-tab";
 import type React from "react";
 import { useEffect, useState } from "react";
-import { CiGrid31 } from "react-icons/ci";
-import { CiUser } from "react-icons/ci";
-import { CiVideoOn } from "react-icons/ci";
-import { CiImageOn } from "react-icons/ci";
-import { CiShop } from "react-icons/ci";
-
-interface UserTabLink {
-  icon: string;
-  label: string;
-  href: string;
-}
-
-interface UserTabProps {
-  currentTab: string
-  setCurrentTab(arg: string): void
-}
-
-interface SidebarIconProps {
-  feed: React.JSX.Element
-  networking: React.JSX.Element 
-  video: React.JSX.Element 
-  photo: React.JSX.Element 
-  shop: React.JSX.Element
-}
+import { SidebarIconProps, UserTabLink, UserTabProps } from "./types";
+import { USERTAB_ICONS } from "./data";
 
 export default function UserTab({currentTab, setCurrentTab}: UserTabProps) {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
@@ -35,49 +13,6 @@ export default function UserTab({currentTab, setCurrentTab}: UserTabProps) {
     label: "",
     href: "",
   });
-
-  const icons: SidebarIconProps | any = {
-    feed: (
-      <CiGrid31
-        size={24}
-        className={`${
-          selectedTab?.icon === "feed" ? "colored-icon" : "gray-icon"
-        }`}
-      />
-    ),
-    networking: (
-      <CiUser
-        size={24}
-        className={`${
-          selectedTab?.icon === "networking" ? "colored-icon" : "gray-icon"
-        }`}
-      />
-    ),
-    video: (
-      <CiVideoOn
-        size={24}
-        className={`${
-          selectedTab?.icon === "video" ? "colored-icon" : "gray-icon"
-        }`}
-      />
-    ),
-    photo: (
-      <CiImageOn
-        size={24}
-        className={`${
-          selectedTab?.icon === "photo" ? "colored-icon" : "gray-icon"
-        }`}
-      />
-    ),
-    shop: (
-      <CiShop
-        size={24}
-        className={`${
-          selectedTab?.icon === "shop" ? "colored-icon" : "gray-icon"
-        }`}
-      />
-    ),
-  };
 
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
@@ -118,7 +53,7 @@ export default function UserTab({currentTab, setCurrentTab}: UserTabProps) {
                     : "border-transparent"
                 }`}
               >
-                {icons[tab.icon]}
+                {USERTAB_ICONS[tab.icon]}
               </figure>
               <p
                 className={`text-sm w-full transition-all ease-in-out duration-100 ${

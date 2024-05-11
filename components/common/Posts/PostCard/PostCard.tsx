@@ -13,7 +13,7 @@ import { getUser } from "@/context/UserContext";
 import { toast } from "react-toastify";
 import { IoIosSend } from "react-icons/io";
 import OpenPostCard from "../OpenPostCard/OpenPostCard";
-import UploadPhoto from "@/components/Config/UploadPhoto";
+import UploadPhoto from "@/components/toolkit/Config/UploadPhoto";
 
 const PostCard = ({
 	postContent,

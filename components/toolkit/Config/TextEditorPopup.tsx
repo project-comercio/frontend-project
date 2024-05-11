@@ -1,5 +1,5 @@
 import React from 'react'
-import Popup from '../Popups/BasePopup'
+import Popup from '../../Popups/BasePopup'
 import TextEditor from './TextEditor'
 
 interface TextEditorPopupProps {

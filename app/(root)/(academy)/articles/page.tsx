@@ -1,8 +1,8 @@
 import React from 'react'
 import Marketing from './components/Marketing'
 import Header from './components/Header'
-import Navbar from '@/components/Navbar/Navbar'
 import { getMetaData } from '@/utils/getMetaData'
+import Navbar from '@/components/toolkit/Navbar/Navbar'
 
 export async function generateMetadata() {
   return getMetaData({

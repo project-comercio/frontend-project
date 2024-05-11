@@ -1,8 +1,9 @@
-import PostCard from "@/components/Posts/PostCard/PostCard";
+
 import React, { Suspense, useEffect, useState } from "react";
 import CreatePost from "./CreatePost";
 import type { PostProps } from "@/types";
-import MiniLoader from "@/components/Config/MiniLoader";
+import MiniLoader from "@/components/toolkit/Config/MiniLoader";
+import PostCard from "@/components/common/Posts/PostCard/PostCard";
 
 export default function MainFeed() {
 	const [posts, setPosts] = useState<PostProps[]>([]);
@@ -21,7 +22,7 @@ export default function MainFeed() {
 	useEffect(() => {
 		handleGetAllPosts()
 	}, [])
-	
+
 	return (
 		<div className="w-full flex flex-col gap-4">
 			<CreatePost handleGetAllPost={handleGetAllPosts} />

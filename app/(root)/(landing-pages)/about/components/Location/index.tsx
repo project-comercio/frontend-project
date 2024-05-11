@@ -7,7 +7,7 @@ export function Location() {
 	const { width } = useWindowDimensions();
 
 	return (
-		<div className="w-full flex flex-col items-center px-4">
+		<section className="w-full flex flex-col items-center px-4">
 			<article className="my-4">
 				<p className="text-base text-slate-500 tracking-wide uppercase text-center">
 					Nosso projeto
@@ -48,6 +48,6 @@ export function Location() {
 					/>
 				</article>
 			</section>
-		</div>
+		</section>
 	);
 }

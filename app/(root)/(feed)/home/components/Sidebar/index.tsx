@@ -1,7 +1,8 @@
 "use client";
 
-import SidebarArticle from "@/components/Article/SidebarArticle/SidebarArticle";
-import CtaButton from "@/components/Button/CtaButton/CtaButton";
+
+import SidebarArticle from "@/components/common/Article/SidebarArticle/SidebarArticle";
+import CtaButton from "@/components/toolkit/Button/CtaButton/CtaButton";
 import { COMPANIES_DATA } from "@/constants/companies-data";
 import type { CompanyDataProps, UserProps } from "@/types";
 import { randomize } from "@/utils/functions/randomItem";

@@ -5,7 +5,7 @@ import type { UpdateUserProfileProps } from "./types";
 import { useEffect, useState } from "react";
 import { getUser } from "@/context/UserContext";
 import Image from "next/image";
-import UploadPhoto from "@/components/Config/UploadPhoto";
+import UploadPhoto from "@/components/toolkit/Config/UploadPhoto";
 
 export default function UpdateUserProfile({
 	showState,
