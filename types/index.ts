@@ -1,8 +1,4 @@
-import type { Params } from "next/dist/shared/lib/router/utils/route-matcher";
-import type { FunctionComponent } from "react";
 import React from "react";
-import type { SwiperRef, SwiperSlideProps } from "swiper/react";
-import type { SwiperModule } from "swiper/types";
 import type { Params } from 'next/dist/shared/lib/router/utils/route-matcher'
 import type { FunctionComponent } from 'react'
 import type { SwiperRef, SwiperSlideProps } from 'swiper/react'
