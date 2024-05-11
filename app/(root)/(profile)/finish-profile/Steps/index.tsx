@@ -19,10 +19,10 @@ export default function Steps() {
 		cpf: "",
 		cnpj: "",
 		address: "",
-		cellphone: "",
-		motivation: "",
-		jobTitle: "",
-		marketType: ""
+		telephone: "",
+		preferences: "",
+		workField: "",
+		companyField: ""
 	});
 
 	const handleInputChange = (fieldName: string, newValue: string) => {
@@ -36,6 +36,7 @@ export default function Steps() {
 		<div className="max-w-6xl w-full">
 			{currentStep === 1 ? (
 				<FirstStep
+					data={data}
 					setCurrentStep={setCurrentStep}
 					handleChange={handleInputChange}
 				/>

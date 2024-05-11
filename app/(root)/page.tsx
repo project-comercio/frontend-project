@@ -18,8 +18,8 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion"
-import Navbar from "@/components/Navbar/Navbar";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/utils/animations/motion";
+import Navbar from "@/components/toolkit/Navbar/Navbar";
 
 export default function Home() {
   return (
