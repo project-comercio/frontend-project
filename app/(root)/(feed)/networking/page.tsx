@@ -1,12 +1,14 @@
-
 import Navbar from "@/components/toolkit/Navbar/Navbar";
 import { getMetaData } from "@/utils/getMetaData";
+import Navbar from '@/components/Navbar/Navbar'
+import { getMetaData } from '@/utils/getMetaData'
 
 export async function generateMetadata() {
   return getMetaData({
-    title: "Networking",
-    description: "Descubra outras empresas referencias do seu nicho e veja o que está em alta por ai",
-    image: ""
+    title: 'Networking - Descubra empresas referências',
+    description:
+      'Descubra outras empresas referencias do seu nicho e veja o que está em alta por ai',
+    image: ''
   })
 }
 
