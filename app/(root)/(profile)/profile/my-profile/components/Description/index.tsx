@@ -1,11 +1,6 @@
 "use client";
 
-<<<<<<< HEAD
 import TextEditorPopup from "@/components/toolkit/Config/TextEditorPopup";
-=======
-
-import TextEditorPopup from "@/components/common/Config/TextEditorPopup";
->>>>>>> 1965937343b9f9cade3c56f9f5b114c8194f82a9
 import { getUser } from "@/context/UserContext";
 import React, { useState } from "react";
 import { toast } from "react-toastify";

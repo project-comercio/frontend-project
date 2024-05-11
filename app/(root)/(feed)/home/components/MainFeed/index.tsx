@@ -2,11 +2,7 @@
 import React, { Suspense, useEffect, useState } from "react";
 import CreatePost from "./CreatePost";
 import type { PostProps } from "@/types";
-<<<<<<< HEAD
 import MiniLoader from "@/components/toolkit/Config/MiniLoader";
-=======
-import MiniLoader from "@/components/common/Config/MiniLoader";
->>>>>>> 1965937343b9f9cade3c56f9f5b114c8194f82a9
 import PostCard from "@/components/common/Posts/PostCard/PostCard";
 
 export default function MainFeed() {

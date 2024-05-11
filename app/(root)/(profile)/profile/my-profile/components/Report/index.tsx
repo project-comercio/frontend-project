@@ -1,6 +1,6 @@
 "use client";
 
-import DoughnutChart from "@/components/Charts/DoughnutChart/DoughnutChart";
+import DoughnutChart from "@/components/toolkit/Charts/DoughnutChart/DoughnutChart";
 
 export default function Report() {
 	return (

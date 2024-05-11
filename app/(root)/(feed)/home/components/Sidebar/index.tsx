@@ -1,12 +1,7 @@
 "use client";
 
-
 import SidebarArticle from "@/components/common/Article/SidebarArticle/SidebarArticle";
-<<<<<<< HEAD
-import CtaButton from "@/components/toolkit/Button/CtaButton/CtaButton";
-=======
 import CtaButton from "@/components/common/Button/CtaButton/CtaButton";
->>>>>>> 1965937343b9f9cade3c56f9f5b114c8194f82a9
 import { COMPANIES_DATA } from "@/constants/companies-data";
 import type { CompanyDataProps, UserProps } from "@/types";
 import { usePathname } from "next/navigation";
