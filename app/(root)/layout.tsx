@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="pt">
-        <body className="text-slate-700 selection:bg-[#899edb] selection:text-white">
+        <body className="overflow-x-hidden text-slate-700 selection:bg-[#899edb] selection:text-white">
           <ApolloContext>
             <ChakraProvider>
               <ToastMessage />
