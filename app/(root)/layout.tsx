@@ -1,10 +1,15 @@
-import { ApolloContext } from "@/context/ApolloContext";
-import ToastMessage from "@/components/toolkit/Config/ToastMessage";
 import { ClerkProvider } from "@clerk/nextjs";
-import { PrivateRouteProvider } from "@/context/PrivateRouteContext";
 import { ChakraProvider } from "@chakra-ui/react";
+
+import { PrivateRouteProvider } from '@/context/PrivateRouteContext'
+import { ApolloContext } from '@/context/ApolloContext'
+
 import { getMetaData } from "@/utils/getMetaData";
-import "../../styles/globals.scss";
+import ToastMessage from '@/components/toolkit/Config/ToastMessage'
+import { RootLayoutProps } from "./types";
+
+import '../../styles/globals.scss'
+import 'animate.css'
 
 export async function generateMetadata() {
   return getMetaData({
@@ -15,14 +20,12 @@ export async function generateMetadata() {
   })
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+const RootLayout: React.FC<RootLayoutProps> = ({
+  children, params: {locale}
+}) => {
   return (
     <ClerkProvider>
-      <html lang="pt">
+      <html lang={locale}>
         <body className="overflow-x-hidden text-slate-700 selection:bg-[#899edb] selection:text-white">
           <ApolloContext>
             <ChakraProvider>
@@ -37,3 +40,5 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
+
+export default RootLayout

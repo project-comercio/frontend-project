@@ -1,4 +1,2 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-yarn commitlint --edit $1
+#!/bin/sh
+cd "$(dirname "$0")/.." && npx --no -- commitlint --edit $1

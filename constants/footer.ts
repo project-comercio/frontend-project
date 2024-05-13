@@ -5,7 +5,8 @@ export const footerLinks = [
       { label: 'Acessibilidade', href: '/' },
       { label: 'Normas', href: '/' },
       { label: 'Dados', href: '/' },
-      { label: 'Banco de Dados', href: '/' }
+      { label: 'Banco de Dados', href: '/' },
+      { label: 'Informações', href: '/' }
     ]
   },
   {
@@ -13,13 +14,17 @@ export const footerLinks = [
     links: [
       { label: 'Site institucional', href: '/' },
       { label: 'Fale conosco', href: '/' },
-      { label: 'Carreiras', href: '/' },
-      { label: 'Contato', href: '/' }
+      { label: 'Quem somos', href: '/' },
+      { label: 'Contato', href: '/' },
+      { label: 'Redes Sociais', href: '/' },
+      { label: 'Código fonte', href: '/' }
     ]
   },
   {
     title: 'Descubra',
     links: [
+      { label: 'API', href: '/' },
+      { label: 'Academy', href: '/' },
       { label: 'Informações pessoais', href: '/' },
       { label: 'Adicione um artigo', href: '/' },
       { label: 'Informações', href: '/' },

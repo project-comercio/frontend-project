@@ -7,12 +7,12 @@ export const APP_ROUTES = {
     trending: '/trending',
     articles: '/articles',
     about: '/about',
-    academy: '/academy',
     contact: '/contact',
     company: '/company',
     finishProfile: '/finish-profile'
   },
   public: {
-    home: '/'
+    home: '/',
+    academy: '/academy'
   }
 }
