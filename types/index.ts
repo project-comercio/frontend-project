@@ -150,3 +150,10 @@ export interface IconProps {
   fill?: string
   stroke?: string
 }
+
+export interface ButtonCopy {
+  button: {
+    label?: string
+    href?: string
+  }
+}

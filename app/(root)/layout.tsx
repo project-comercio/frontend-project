@@ -1,12 +1,15 @@
-import { ApolloContext } from "@/context/ApolloContext";
-import ToastMessage from "@/components/toolkit/Config/ToastMessage";
 import { ClerkProvider } from "@clerk/nextjs";
-import { PrivateRouteProvider } from "@/context/PrivateRouteContext";
 import { ChakraProvider } from "@chakra-ui/react";
+
+import { PrivateRouteProvider } from '@/context/PrivateRouteContext'
+import { ApolloContext } from '@/context/ApolloContext'
+
 import { getMetaData } from "@/utils/getMetaData";
-import "../../styles/globals.scss";
+import ToastMessage from '@/components/toolkit/Config/ToastMessage'
 import { RootLayoutProps } from "./types";
-import React from "react";
+
+import '../../styles/globals.scss'
+import 'animate.css'
 
 export async function generateMetadata() {
   return getMetaData({
