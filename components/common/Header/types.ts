@@ -1,8 +1,13 @@
-import { ImageCopy } from '@/types/copy/image'
+
 
 export interface HeaderProps {
   backgroundColor?: string
-  backgroundImage: ImageCopy
+  backgroundImage: {
+    src: string
+    alt: string
+    width?: string
+    height?: string
+  }
   buttonText: string
   title: string
 }
