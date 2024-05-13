@@ -1,5 +1,5 @@
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+cd "$(dirname "$0")/.." && npx lint-staged --concurrent false
 
 echo '👷 Checking lint issues before committing 🛁🧽'
 echo 'please be patient, this may take a while...'
