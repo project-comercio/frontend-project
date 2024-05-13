@@ -1,7 +1,5 @@
-import { CustomImage } from '@/components/toolkit/CustomImage'
-
-import { AuthButton } from '../AuthButton'
 import { HeaderProps } from './types'
+import Image from 'next/image'
 
 export const Header: React.FC<HeaderProps> = ({
   backgroundColor = 'bg-slate-100',
@@ -18,19 +16,18 @@ export const Header: React.FC<HeaderProps> = ({
           <h1 className="max-w-[480px] text-center text-3xl font-semibold md:text-left lg:max-w-full lg:text-5xl">
             {title}
           </h1>
-          <AuthButton className="max-w-full md:max-w-fit ">
+          <button className="max-w-full md:max-w-fit ease-in-out text-sm bg-gradient-to-tr from-blue-700 to-blue-500 transition-all duration-300 hover:brightness-110 text-white rounded-md px-12 py-2">
             {buttonText}
-          </AuthButton>
+          </button>
         </article>
       </div>
       <figure className="relative md:w-2/5 lg:h-auto 2xl:w-1/2">
-        <CustomImage
+        <Image
           alt={backgroundImage.alt}
           className="h-full object-cover lg:h-auto"
           height={684}
           src={backgroundImage.src}
           width={1272}
-          isDevelopMode
         />
       </figure>
     </section>
