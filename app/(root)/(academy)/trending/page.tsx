@@ -1,7 +1,7 @@
-import React from "react";
-import Topics from "./components/Topics";
-import { getMetaData } from "@/utils/getMetaData";
-import Navbar from "@/components/toolkit/Navbar/Navbar";
+import React from 'react'
+import Topics from './components/Topics'
+import { getMetaData } from '@/utils/getMetaData'
+import Navbar from '@/components/toolkit/Navbar/Navbar'
 
 export async function generateMetadata() {
   return getMetaData({
@@ -14,7 +14,7 @@ export async function generateMetadata() {
 export default function Page() {
   return (
     <>
-      <Navbar variant="primary" />
+      <Navbar variant="default" />
       <main className="min-h-[62vh] px-4 pt-20 lg:px-12">
         <Topics />
       </main>

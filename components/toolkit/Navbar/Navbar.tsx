@@ -1,25 +1,26 @@
-"use client";
+'use client'
 
-import { NAVBAR_LINKS } from "@/constants/navbar";
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import Link from "next/link";
-import React, { useState } from "react";
-import { IoMenuOutline } from "react-icons/io5";
-import MiniNavbar from "./MiniNavbar";
-import type { NavbarLink, NavbarProps } from "./types";
-import NavbarItem from "./NavbarItem";
+import { NAVBAR_LINKS } from '@/constants/navbar'
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import Link from 'next/link'
+import React, { useState } from 'react'
+import { IoMenuOutline } from 'react-icons/io5'
+import MiniNavbar from './MiniNavbar'
+import type { NavbarLink, NavbarProps } from './types'
+import NavbarItem from './NavbarItem'
+import { HamburgerButton } from '@/components/common/HamburgerButton'
 
 const Navbar = ({ transparent, variant }: NavbarProps) => {
-	const [showMiniNavbar, setShowMiniNavbar] = useState<boolean>(false);
+  const [showMiniNavbar, setShowMiniNavbar] = useState<boolean>(false)
 
-	return (
+  return (
     <nav
       className={`${transparent ? 'bg-transparent' : null} ${
         variant === 'secondary'
           ? 'bg-gradient-to-r from-slate-900 to-slate-800'
           : null
       } ${
-        variant === 'primary' ? 'bg-white' : null
+        variant === 'default' ? 'bg-white' : null
       } fixed z-50 lg:px-12 px-4 py-5 w-full flex justify-center`}
     >
       <div className="max-w-7xl w-full flex justify-between gap-4 items-center">
@@ -46,15 +47,20 @@ const Navbar = ({ transparent, variant }: NavbarProps) => {
             ))}
           </ul>
         </div>
-        <div className="w-full max-w-lg items-center flex justify-end">
+        <div className="w-full max-w- gap-4 items-center flex justify-end">
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
-            <IoMenuOutline
+            {/* <IoMenuOutline
               size={32}
               className={`ml-4 cursor-pointer ${
                 variant === 'secondary' ? 'white-icon' : 'dark-icon'
               }`}
               onClick={() => setShowMiniNavbar(!showMiniNavbar)}
+            /> */}
+            <HamburgerButton
+              isOpen={showMiniNavbar}
+              onClick={() => setShowMiniNavbar(!showMiniNavbar)}
+              variant={variant}
             />
           </SignedIn>
           <SignedOut>
@@ -85,6 +91,6 @@ const Navbar = ({ transparent, variant }: NavbarProps) => {
       ) : null}
     </nav>
   )
-};
+}
 
-export default Navbar;
+export default Navbar
