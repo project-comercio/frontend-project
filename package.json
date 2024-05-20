@@ -8,9 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "json-server": "json-server server.json -w -p 3333",
-    "prepare": "husky install",
-    "check-format": "prettier --check",
-    "format": "prettier --write"
   },
   "dependencies": {
     "@apollo/client": "^3.9.10",
