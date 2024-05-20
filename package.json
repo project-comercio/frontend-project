@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "json-server": "json-server server.json -w -p 3333",
+    "json-server": "json-server server.json -w -p 3333"
   },
   "dependencies": {
     "@apollo/client": "^3.9.10",
