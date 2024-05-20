@@ -1,17 +1,15 @@
-
-import { Header } from "./components/Header";
-import { ClientsCards } from "./components/ClientsCards";
-import { Features } from "./components/Features";
-import { SeeMore } from "./components/SeeMore";
-import { getMetaData } from "@/utils/getMetaData";
-import { NextPage } from "next";
-import Navbar from "@/components/toolkit/Navbar/Navbar";
+import { Header } from './components/Header'
+import { ClientsCards } from './components/ClientsCards'
+import { Features } from './components/Features'
+import { SeeMore } from './components/SeeMore'
+import { getMetaData } from '@/utils/getMetaData'
+import { NextPage } from 'next'
+import Navbar from '@/components/toolkit/Navbar/Navbar'
 
 export async function generateMetadata() {
   return getMetaData({
     title: 'ProjetoIFSP - Página inicial',
-    description:
-      'Expanda a visibilidade da sua marca',
+    description: 'Expanda a visibilidade da sua marca',
     image: ''
   })
 }
@@ -19,7 +17,7 @@ export async function generateMetadata() {
 const Page: NextPage = () => {
   return (
     <>
-      <Navbar variant="primary" />
+      <Navbar variant="default" />
       <main className="lg:px-12 px-4 min-h-[62vh] pt-20">
         <Header />
         <Features />
@@ -27,7 +25,7 @@ const Page: NextPage = () => {
         <SeeMore />
       </main>
     </>
-  );
+  )
 }
 
 export default Page

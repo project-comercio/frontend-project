@@ -4,13 +4,13 @@ export interface MiniNavbarProps {
 }
 
 export interface NavbarLink {
-  label: string;
-  href: string;
+  label: string
+  href: string
 }
 
 export interface NavbarProps {
-  transparent?: boolean;
-  variant?: 'primary' | 'secondary'
+  transparent?: boolean
+  variant?: 'default' | 'secondary'
 }
 
 export interface NavbarItemProps {
